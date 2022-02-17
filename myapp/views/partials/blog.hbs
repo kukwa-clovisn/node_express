@@ -1,0 +1,31 @@
+
+{{!-- styling in style.css --}}
+{{>canvas}}
+<div class="add">
+  <form action="/user/login/dashboard/post" method="post" class="form">
+    <h2>welcome! {{firstName}}, write a post</h2>
+    <input
+      type="text"
+      name="author"
+      id="username"
+      placeholder="Enter username..."
+      required
+    />
+    <input
+      type="title"
+      name="title"
+      id="title"
+      placeholder="Enter post title..."
+      required
+    />
+    <textarea
+      name="content"
+      id="post"
+      cols="40"
+      rows="10"
+      placeholder="Write post....."
+      required
+    ></textarea>
+    <button type="submit">create post</button>
+  </form>
+</div>

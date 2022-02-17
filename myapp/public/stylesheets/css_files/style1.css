@@ -1,0 +1,428 @@
+.dashboard {
+  width: 100vw;
+  min-height: 100vh;
+  background: white;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+.dashboard .left-content {
+  width: 20%;
+  height: 95vh;
+  background: inherit;
+}
+.dashboard .left-content .head {
+  width: 95%;
+  height: 202px;
+  padding: 10px;
+  background: white;
+}
+.dashboard .left-content .head .img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: black;
+  margin: 0 auto;
+}
+.dashboard .left-content .head .img img {
+  width: 150px;
+  height: auto;
+  cursor: pointer;
+}
+.dashboard .left-content .head .desc {
+  width: 100%;
+}
+.dashboard .left-content .head .desc h3 {
+  text-transform: capitalize;
+  text-align: center;
+  font: 700 19px "Poppins", sans-serif;
+  color: purple;
+  margin: 10px auto;
+}
+.dashboard .left-content .head .desc p {
+  text-align: center;
+  color: tomato;
+  font-size: 10px;
+  margin: 0 auto;
+}
+.dashboard .left-content .cont {
+  width: 100%;
+  height: 57%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-direction: column;
+}
+.dashboard .left-content .cont button {
+  width: 90%;
+  display: block;
+  background: #0000c0;
+  transition: all 0.3s ease;
+}
+.dashboard .left-content .cont button:hover {
+  background: #a31901;
+}
+.dashboard .right-content {
+  width: 79%;
+  height: 95vh;
+  padding-left: 1px;
+  background: #e0e3e6;
+}
+.dashboard .right-content .top-right-content {
+  width: 100%;
+  height: 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: white;
+}
+.dashboard .right-content .top-right-content .small-screens {
+  display: none;
+}
+.dashboard .right-content .top-right-content .left {
+  width: 50%;
+  height: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.dashboard .right-content .top-right-content .left h1 {
+  color: #535252;
+  font: 700 20px "Poppins", sans-serif;
+  color: purple;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.dashboard .right-content .top-right-content .left h1 span {
+  color: tomato;
+  text-transform: lowercase;
+}
+.dashboard .right-content .top-right-content .right {
+  width: 49%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+.dashboard .right-content .top-right-content .right li {
+  list-style-type: none;
+}
+.dashboard .right-content .top-right-content .right li a {
+  text-transform: capitalize;
+  text-decoration: none;
+  color: #460146;
+  font-weight: 600;
+}
+.dashboard .right-content .main {
+  margin: 0 auto;
+  height: 68%;
+  padding-top: 40px;
+  width: 95%;
+  height: 500px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.dashboard .right-content .main .left-board {
+  width: 62%;
+  height: 100%;
+  background: transparent;
+}
+.dashboard .right-content .main .left-board h2 {
+  text-align: left;
+  padding-left: 15px;
+  text-transform: capitalize;
+  color: purple;
+  font: 600 23px "Poppins", sans-serif;
+}
+.dashboard .right-content .main .left-board .left {
+  width: 95%;
+  height: 70%;
+  background: white;
+  border-radius: 5px;
+  padding: 15px;
+}
+.dashboard .right-content .main .left-board .left h1 {
+  text-transform: capitalize;
+  font: 600 25px "Poppins", sans-serif;
+  padding: 5px;
+  color: #272626;
+  text-align: center;
+}
+.dashboard .right-content .main .left-board .left h1 span {
+  font: 700 1.1em "Poppins", sans-serif;
+  color: purple;
+}
+.dashboard .right-content .main .left-board .left p {
+  width: 90%;
+  margin: 10px auto;
+  color: #272626;
+  padding: 10px;
+}
+.dashboard .right-content .main .left-board .left p .span-main {
+  color: purple;
+  padding: 0;
+  display: inline;
+  justify-content: center;
+  align-items: center;
+  font-weight: 600;
+  font-family: "Poppins", sans-serif;
+  cursor: pointer;
+}
+.dashboard .right-content .main .left-board .left p .span-main .span {
+  color: tomato;
+  margin: 0 -2.5px;
+  padding: 0;
+}
+.dashboard .right-content .main .left-board .left button {
+  width: 300px;
+  height: 50px;
+  border-radius: 5px;
+  color: white;
+  background: #0101b9;
+}
+.dashboard .right-content .main .left-board .left button:hover {
+  background: #a31901;
+}
+.dashboard .right-content .main .right-board {
+  width: 32%;
+  height: 100%;
+  background: transparent;
+}
+.dashboard .right-content .main .right-board h2 {
+  font: 500 19px "Poppins", sans-serif;
+  color: #2b0127;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.dashboard .right-content .main .right-board .right {
+  height: 85%;
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-direction: column;
+}
+.dashboard .right-content .main .right-board .right .blog {
+  width: 95%;
+  padding: 10px;
+  height: 37%;
+  background: white;
+  border-radius: 5px;
+  position: relative;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.dashboard .right-content .main .right-board .right .blog:hover {
+  background: #d7ebf8;
+  transform: scale(0.9);
+}
+.dashboard .right-content .main .right-board .right .blog:active {
+  transform: scale(0.8);
+}
+.dashboard .right-content .main .right-board .right .blog .arrow {
+  display: none;
+  position: absolute;
+  right: 30px;
+  top: 20px;
+}
+.dashboard .right-content .main .right-board .right .blog:hover .arrow {
+  display: block;
+}
+.dashboard .right-content .main .right-board .right .blog h3 {
+  text-transform: capitalize;
+  text-align: center;
+  color: #302e2e;
+  font: 600 16px "Poppins", sans-serif;
+  padding: 0;
+  margin: 0;
+}
+.dashboard .right-content .main .right-board .right .blog p {
+  font: 400 12px "Poppins", sans-serif;
+  padding: 0 10px;
+}
+.dashboard .right-content .main .right-board .right .blog button {
+  width: 98%;
+  color: white;
+}
+.dashboard .bottom-content {
+  width: 100%;
+  background: white;
+  background: #e0e3e6;
+  height: 100vh;
+  padding: 10px;
+  display: flex;
+  margin: 10px auto;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.dashboard .bottom-content .left-div {
+  width: 40%;
+  height: 100%;
+  background: #e0e3e6;
+  border-radius: 100%;
+  background: radial-gradient(#af628c 0%, white 100%);
+}
+.dashboard .bottom-content .left-div .content {
+  width: 95%;
+  height: 45%;
+  background: white;
+  border-radius: 5px;
+  cursor: pointer;
+  padding: 10px;
+  margin-top: 10px;
+}
+.dashboard .bottom-content .left-div .content h3 {
+  padding: 10px;
+  text-align: center;
+  text-transform: capitalize;
+  font: 500 24px "Poppins", sans-serif;
+  margin: 0 auto;
+}
+.dashboard .bottom-content .left-div .content p {
+  padding: 10px;
+  width: 90%;
+  margin: 10px auto;
+}
+.dashboard .bottom-content .left-div .content button {
+  margin: 20px auto;
+}
+.dashboard .bottom-content .right-div {
+  width: 58%;
+  height: 100%;
+  background: white;
+  border-radius: 3px 3px 3px 100%;
+}
+.dashboard #update {
+  width: 100vw;
+  height: 90vh;
+  background: white;
+}
+@media screen and (max-width: 1000px) {
+  .dashboard .left-content {
+    display: none;
+  }
+  .dashboard .right-content {
+    width: 100vw;
+    min-height: 100vh;
+  }
+  .dashboard .right-content .top-right-content {
+    height: 13vh;
+  }
+  .dashboard .right-content .top-right-content .left,
+.dashboard .right-content .top-right-content .right {
+    display: none;
+  }
+  .dashboard .right-content .top-right-content .small-screens {
+    display: flex;
+    width: 100vw;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .dashboard .right-content .top-right-content .small-screens .menu-img {
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 5px solid #310131;
+    margin-left: 100px;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .dashboard .right-content .top-right-content .small-screens .menu-img img {
+    width: 110px;
+    height: auto;
+    cursor: pointer;
+    display: block;
+    margin: 0 auto;
+  }
+  .dashboard .right-content .top-right-content .small-screens h1 {
+    width: 82%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 80px;
+    padding-right: 20px;
+    color: purple;
+  }
+  .dashboard .right-content .top-right-content .small-screens h1 span {
+    color: tomato;
+    text-transform: lowercase;
+  }
+  .dashboard .right-content .main {
+    flex-direction: column;
+    height: fit-content;
+  }
+  .dashboard .right-content .main .left-board,
+.dashboard .right-content .main .right-board {
+    width: 95%;
+    min-height: 750px;
+  }
+  .dashboard .right-content .main .left-board h2,
+.dashboard .right-content .main .right-board h2 {
+    font-size: 30px;
+    padding: 20px;
+  }
+  .dashboard .right-content .main .left-board div p,
+.dashboard .right-content .main .right-board div p {
+    font-size: 40px;
+    text-align: center;
+    padding: 20px;
+  }
+  .dashboard .right-content .main .left-board .left {
+    height: max-content;
+    margin: 10px;
+  }
+  .dashboard .right-content .main .left-board .left h1 {
+    font-size: 50px;
+  }
+  .dashboard .right-content .main .left-board .left h1 span {
+    display: block;
+  }
+  .dashboard .right-content .main .left-board .left button {
+    width: 90%;
+    height: 100px;
+    border-radius: 100px;
+    margin: 20px auto;
+    font-size: 40px;
+  }
+  .dashboard .right-content .main .right-board {
+    height: fit-content;
+  }
+  .dashboard .right-content .main .right-board h2 {
+    font-size: 50px;
+  }
+  .dashboard .right-content .main .right-board .right .blog {
+    margin: 20px auto;
+    height: fit-content;
+  }
+  .dashboard .right-content .main .right-board .right .blog h3 {
+    font-size: 60px;
+  }
+  .dashboard .right-content .main .right-board .right .blog p {
+    font-size: 40px;
+    padding: 20px;
+  }
+  .dashboard .bottom-content {
+    flex-direction: column;
+    margin-top: 30px;
+  }
+  .dashboard .bottom-content .left-div,
+.dashboard .bottom-content .right-div {
+    width: 95%;
+  }
+}
+
+/*# sourceMappingURL=style1.css.map */

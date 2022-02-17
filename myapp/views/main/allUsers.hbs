@@ -1,0 +1,21 @@
+{{> header}}
+<div class="main">
+  <div class="blogs" id="blogs">
+    {{#each posts}}
+      <div class="blog">
+        <h1>{{this.title}}</h1>
+        <div class="content">
+          <p>{{this.content}}</p>
+          <h3>Author:<span>{{this.author}}</span> {{this.date}}</h3>
+        </div>
+
+      </div>
+      {{/each}}
+    <div class="err">
+      <h1> {{oops}}</h1>
+      <p>{{noUser}}</p>
+
+    </div>
+  </div>
+</div>
+{{>footer}}

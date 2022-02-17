@@ -1,0 +1,96 @@
+{{! styling in styles1.css }}
+
+<div class="dashboard">
+  <div class="left-content">
+    <div class="head">
+      <div class="img">
+        <img src="/{{idImage}}" />
+      </div>
+      <div class="desc">
+        <h3>{{idName}}</h3>
+        <p>{{idEmail}}</p>
+      </div>
+    </div>
+    <div class="cont one">
+      <button><a href="/users">read posts</a></button>
+      <button><a href="#create-post">create post</a></button>  <button><a href="/user/login/dashboard/partner">partner</a></button>
+      <button><a href="#update">update profile</a></button>
+      <button><a href="/">log out</a></button>
+    </div>
+  </div>
+  <div class="right-content">
+    <div class="top-right-content">
+      <div class="small-screens">
+        <div class="menu-img">
+          <img src="/{{idImage}}" alt="">
+        </div>
+        <h1>Da<span>shboa</span>rD</h1>
+      </div>
+      <div class="left">
+        <h1>Da<span>shboa</span>rD</h1>
+        <h5>support</h5>
+      </div>
+      <div class="right">
+        <li><a href="/">homepage</a></li>
+        <li><a href="#">billing</a></li>
+        <li><a href="#">online</a></li>
+      </div>
+    </div>
+    <div class="main">
+        <div class="left-board">
+          <h2>welcome!</h2>
+          <div class="left">
+            <h1>
+              welcome
+              <span>{{idName}}.</span>
+            </h1>
+            <p>welcome {{firstName}} to your <span class="span-main">Da<span class="span">shboa</span>rD</span>. <br> learn more about GMinds and explore the site as much as you can. We're here to help you out with all you need. <br> you can start by creating a post</p>
+            <button><a href="#create-post">write post</a></button>
+          </div>
+        </div>
+        <div class="right-board">
+          <h2>setup..</h2>
+          <div class="right">
+
+            <div class="blog">
+              <h3>lorem ipsum </h3>
+              <i class="fas fa-arrow-right arrow"></i>
+              <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vitae
+                ipsum doloribus tenetur voluptate autem inventore libero
+                doloremque saepe, quasi aperiam.</p>
+
+            </div>
+            <div class="blog">
+              <h3>lorem ipsum</h3>
+              <i class="fas fa-arrow-right arrow"></i>
+              <p>Ea optio itaque possimus distinctio reiciendis fuga. Harum
+                mollitia deserunt hic, ducimus consectetur suscipit rem possimus
+                quia, quidem tempore sunt!</p>
+            </div>
+          </div>
+        </div>    </div>
+  </div>
+  <div class="bottom-content">
+    <div class="left-div">
+      <div class="content">
+        <h3>Hi! {{firstName}}</h3>
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sed enim recusandae similique aperiam ut consectetur debitis vero iure doloremque fugit?</p>
+        <button>button</button>
+      </div>
+      <div class="content">
+        <h3>lorem dolor</h3>
+        <p>Qui similique aspernatur eum beatae odio, eaque sed expedita. Ipsum ad eos, voluptate dolor beatae et nam laudantium? Rerum, quas?</p>
+         <button>button</button>
+      </div>
+     
+    </div>
+        <div class="right-div" id="create-post">
+          {{>blog}}
+        </div>
+        
+  </div>
+  <div id="update">
+    <br> <br>
+    update profile here.............................
+  </div>
+</div>

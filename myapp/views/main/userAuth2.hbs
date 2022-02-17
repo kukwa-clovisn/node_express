@@ -1,0 +1,22 @@
+<div class="mbird">
+  <form action="/user/join/tel/code" method="post">
+      {{> logo}}
+    <h2>
+      <span> authentication:</span>
+      two factor verification for your new account.</h2>
+    <p>please enter code sent to you...</p>
+    <div class="content">
+      <input type="hidden" name="{{id}}" />
+      <input
+        type="text"
+        name="token"
+        id="contact"
+        placeholder="Enter code..."
+      />
+      <button type="submit">Submit</button>
+    </div>
+        <button class="home"><a href="/">home</a></button>
+    <p>{{error}}</p>
+    <p>{{id}}</p>
+  </form>
+</div>

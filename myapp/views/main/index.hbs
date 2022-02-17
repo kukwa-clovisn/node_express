@@ -1,0 +1,44 @@
+{{!-- styling in styles.css --}}
+{{>canvas}}
+{{> header}}
+<div class="main">
+  <section class="section">
+    <nav class="nav">recent</nav>
+    <nav class="nav">history</nav>
+  </section>
+  <section class="notice">
+    <div class="content">
+      <h3>read blog</h3>
+      <p>Great Leaders are great Readers. Get in touch with great minds!</p>
+      <button><a href="/users/">read blogs</a></button>
+    </div>
+    <div class="content">
+      <h3>write blog</h3>
+      <p>Get to be a writer. Write and publish your thoughts to the world </p>
+      <button><a href="/user/login">log in</a></button>
+
+    </div>
+    <div class="content">
+      <h3>partner</h3>
+      <p>Join our community of great thinkers, writers and be exceptional in
+        everything you do.</p>
+      <button><a href="/user/join">join community</a></button>
+    </div>
+  </section>
+  <section class="search">
+    <form action="/users/blog/search" method="post">
+      <input
+        type="search"
+        name="search"
+        id="search"
+        placeholder="Search by blog title....."
+        required
+      />
+      <button type="submit"><i class="fas fa-search"></i></button>
+    </form>
+  </section>
+  <section class="write">
+    <h1>wanting to write a blog?</h1>
+  </section>
+  <button><a href="/user/login">write blog</a></button>
+</div>{{>footer}}

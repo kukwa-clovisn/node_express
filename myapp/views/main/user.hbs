@@ -1,0 +1,36 @@
+{{!-- styling in styles2.css --}}
+{{>header}}
+<div class="user-form">
+  <form
+    action="/user/join"
+    method="post"
+    class="form"
+    enctype="multipart/form-data"
+  >
+    <h1>Join our daily <span>newshour</span></h1>
+    <div class="content">
+      <div>
+        <label for="username">name:</label>
+        <input type="text" name="username" id="newUser" pattern="[a-zA-Z]+[a-zA-Z0-9_]*[\s]?[a-zA-Z]+[a-zA-Z0-9_]*[\s]?[a-zA-Z]+[a-zA-Z0-9_]*[\s]?[a-zA-Z]+[a-zA-Z0-9_]*" required />
+      </div>
+      <div>
+        <label for="email">email-address:</label>
+        <input type="email" name="email" id="newEmail" pattern="[a-zA-Z0-9_\-\.]+[@][a-z]+[\.][a-z]{2,3}" required />
+      </div>
+      <div>
+        <label for="password">password:</label>
+        <input type="password" name="password" id="newToken" pattern="[a-zA-Z0-9_]*[0-9]*[_@#$%&,\-\*\.]+[a-zA-Z0-9_@#$%&,\*\-\.]{5,}" title="password must be more than six(6) characters and must contain at least one of these characters _@#$%&*,-." required />
+      </div>
+      <div class="file-upload">
+        <input type="file" name="userImage" id="logo" required />
+      </div>
+      <div class="btns">
+        <button type="submit">join</button>
+        <button type="reset">cancel</button>
+
+      </div>
+    </div>
+  </form>
+</div>
+<br>
+{{>footer}}

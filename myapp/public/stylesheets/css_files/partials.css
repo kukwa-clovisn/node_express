@@ -1,0 +1,258 @@
+/* logo==============> */
+#siteLogo {
+  width: 230px;
+  height: 130px;
+  padding: 0;
+  margin: 13px auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: green;
+  font: 600 34px "Poppins", sans-serif;
+  border-radius: 3px;
+  text-transform: capitalize;
+  cursor: pointer;
+  animation: logo 20s infinite linear alternate forwards;
+}
+#siteLogo:first-letter {
+  font-size: 55px;
+  position: relative;
+}
+#siteLogo .span {
+  color: white;
+  display: block;
+  font-size: 23px;
+}
+#siteLogo .span:first-letter {
+  font-size: 100px;
+  color: tomato;
+  font-family: "Russo One", sans-serif;
+}
+
+@keyframes logo {
+  from {
+    background: #1b0000;
+  }
+  50% {
+    background: #180149;
+  }
+  75% {
+    background: #466680;
+  }
+  to {
+    background: #2c624e;
+  }
+}
+/* header==========================> */
+#header {
+  width: 100vw;
+  height: 100px;
+  display: flex;
+  position: fixed;
+  top: 0;
+  z-index: 1;
+  left: 0;
+  justify-content: space-evenly;
+  align-items: center;
+  background-color: white;
+}
+#header .menu {
+  width: 20%;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+  display: none;
+}
+#header .menu .icon {
+  color: #3a353a;
+  font-size: 35px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+@media screen and (max-width: 1000px) {
+  #header #siteLogo {
+    width: 50vw;
+    height: 17vh;
+    font-size: 100px;
+    margin: 50px auto;
+    border-radius: 20px;
+  }
+  #header #siteLogo:first-letter {
+    font-size: 100px;
+  }
+  #header #siteLogo .span {
+    font-size: 70px;
+  }
+  #header #siteLogo .span:first-letter {
+    font-size: 200px;
+  }
+  #header button {
+    height: 80px;
+    font-size: 25px;
+  }
+  #header #header .menu {
+    display: flex;
+  }
+  #header #header .main .icon:hover {
+    transform: rotateZ(-90deg);
+  }
+  #header #header .main .icon:active {
+    transform: scale(0.8);
+  }
+}
+#header h1 {
+  color: #5e1f81;
+  text-transform: capitalize;
+  width: 45%;
+  height: 100%;
+  text-align: center;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  font-weight: 900;
+}
+#header h1:first-letter {
+  font-size: 70px;
+  position: relative;
+}
+#header h1 span {
+  color: red;
+  font-size: 30px;
+}
+#header h1 span:first-letter {
+  font-size: 100px;
+  animation: fun 2s infinite linear alternate forwards;
+  transition: all 0.4s ease;
+}
+#header .navs {
+  width: 50%;
+  height: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+#header nav {
+  width: 25%;
+  height: 100%;
+  font-size: 150%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-transform: capitalize;
+}
+#header nav a {
+  text-decoration: none;
+  color: #292626;
+  color: #791079;
+  font-weight: 600;
+  font-size: 17px;
+  font-family: "Poppins", sans-serif;
+  transition: all 0.3s ease;
+}
+#header nav a:hover {
+  color: crimson;
+}
+#header nav a:active {
+  color: teal;
+}
+@media screen and (max-width: 1000px) {
+  #header {
+    height: 130px;
+  }
+  #header .backHome {
+    display: none;
+  }
+  #header .menu {
+    height: 10vh;
+  }
+  #header .menu .icon {
+    font-size: 70px;
+    left: 150px;
+  }
+}
+
+/* canvas=================> */
+.c1,
+.c2,
+.c3 {
+  width: 3px;
+  height: 3px;
+  border-radius: 50%;
+  animation: c1 15s infinite linear alternate forwards;
+  position: fixed;
+  animation-timing-function: ease;
+  top: 200px;
+  transition: all 0.3s ease-in-out;
+  right: 160px;
+  opacity: 0.5;
+  z-index: 0.4;
+  background: #e28b07;
+}
+
+.c2 {
+  right: 1200px;
+  top: 500px;
+  animation: c2 5s infinite linear alternate forwards;
+  background: #960872;
+}
+
+.c3 {
+  animation: c3 5s infinite linear alternate forwards;
+  right: 1100px;
+  top: 150px;
+  background: teal;
+}
+
+@keyframes c1 {
+  30% {
+    border-radius: 3px;
+    top: 300px;
+  }
+  50% {
+    right: 1000px;
+    transform: scale3d(7);
+    top: 500px;
+  }
+  90% {
+    transform: scale(10);
+    right: 700px;
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+    right: 0;
+    top: 0;
+  }
+}
+@keyframes c2 {
+  to {
+    top: 150px;
+    transform: scale(10);
+    border-radius: 100% 100% 100% 0%;
+  }
+}
+@keyframes c3 {
+  to {
+    top: 500px;
+    border-radius: 0% 100% 100% 100%;
+    transform: scale(15);
+  }
+}
+/* footer====================> */
+footer {
+  width: 100%;
+  height: 50px;
+  font-size: 11px;
+  text-align: center;
+  color: white;
+}
+@media screen and (max-width: 1000px) {
+  footer {
+    font-size: 25px;
+  }
+}
+
+/*# sourceMappingURL=partials.css.map */

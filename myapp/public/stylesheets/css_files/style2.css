@@ -1,0 +1,138 @@
+/* start styling from the log in user form*/
+.user-form {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  padding-top: 130px;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(to bottom, #551a8b 0%, #f0772b 100%);
+  background: transparent;
+  background-size: cover;
+  position: relative;
+}
+.user-form .form {
+  width: 550px;
+  height: 600px;
+  background: white;
+  margin: auto;
+  border-radius: 5px;
+  position: relative;
+}
+.user-form .form h1 {
+  text-align: center;
+  text-transform: capitalize;
+  font: 25px 600 "Poppins", sans-serif;
+  padding: 10px;
+  color: #690969;
+}
+.user-form .form h1 span {
+  color: tomato;
+  cursor: pointer;
+}
+.user-form .form .content {
+  width: 100%;
+  padding: 10px;
+}
+.user-form .form .content div {
+  width: 90%;
+  margin: 10px auto;
+  height: 12%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-direction: column;
+}
+.user-form .form .content div label {
+  display: flex;
+  align-items: center;
+  padding: 0 52px;
+  text-transform: capitalize;
+  font-weight: 500;
+  position: relative;
+  top: 10px;
+  font: 18px "Poppins", sans-serif;
+}
+.user-form .form .content div input {
+  border: none;
+  border-bottom: 3px solid #646363;
+  border-radius: 0;
+  display: block;
+  width: 80%;
+  height: 60%;
+  outline: none;
+  margin: 10px auto;
+  font-family: "Poppins", sans-serif;
+  padding: 0 15px 2px 0;
+}
+.user-form .form .content .file-upload {
+  height: 8%;
+}
+.user-form .form .content .file-upload input {
+  border: none;
+  height: 90%;
+  text-align: center;
+}
+.user-form .form .content .btns {
+  width: 90%;
+  height: 20%;
+  margin: 14px auto;
+}
+.user-form .form .content .btns button {
+  display: block;
+  width: 84%;
+  height: 45%;
+  margin: 10px auto;
+  font-family: "Poppins", sans-serif;
+  color: white;
+}
+@media screen and (max-width: 1000px) {
+  .user-form .form {
+    width: 90vw;
+    height: 1200px;
+  }
+  .user-form .form h1 {
+    font-size: 70px;
+    font-weight: 700;
+    padding: 20px;
+  }
+  .user-form .form h1 span {
+    display: block;
+  }
+  .user-form .form .content div {
+    margin: 10px auto;
+  }
+  .user-form .form .content div label {
+    height: 70px;
+    font-size: 45px;
+    display: flex;
+    align-items: center;
+    top: 20px;
+  }
+  .user-form .form .content div input {
+    font-size: 37px;
+    text-align: center;
+    width: 90%;
+    margin: 0 auto;
+    color: #300330;
+    font-weight: 500;
+    text-transform: capitalize;
+    font-family: "Poppins", sans-serif;
+    padding-bottom: 1px;
+  }
+  .user-form .form .content div input:active {
+    background: white;
+  }
+}
+
+#menu {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background: white;
+}
+
+/*# sourceMappingURL=style2.css.map */

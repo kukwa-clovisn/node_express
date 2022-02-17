@@ -1,0 +1,7 @@
+node_modules/
+.env
+*.scss
+*.map
+uploads/
+sass_files/
+.vscode
