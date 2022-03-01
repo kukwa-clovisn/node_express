@@ -13,8 +13,8 @@ let usersRouter = require("./routes/users");
 let createError = require("http-errors");
 let errorRouter = require("./routes/error");
 
-PORT = process.env.PORT;
-mongo_uri = process.env.MONGO_URI
+let PORT = process.env.PORT;
+const mongo_uri = process.env.MONGO
 // creating an instance of the express app==========================>
 const app = express();
 require("dotenv").config();
@@ -39,11 +39,11 @@ app.set("view engine", "hbs");
 const partialsDir = path.join(__dirname, "views", "partials");
 hbs.registerPartials(partialsDir);
 
-// connecting to the mongoDb database===================================>
-mongoose.connect("mongodb://localhost:27017/blogdb", {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-});
+// // connecting to the mongoDb database===================================>
+// mongoose.connect(mongo_uri, {
+//   useNewUrlParser: true,
+//   useUnifiedTopology: true,
+// }).then(res => console.log('mongo server connected successfully')).catch(err => console.log(err));
 app.use(
   cors({
     origin: "*",

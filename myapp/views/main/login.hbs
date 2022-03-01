@@ -1,10 +1,10 @@
 {{! styling in style3.css }}
 {{>canvas}}
-{{>header}}
+{{>header}} 
 <div class="log-in-form">
-  <form action="/user/login/dashboard" method="post" class="form">
-    {{> logo}}
-    <p>log in</p>
+  
+  <form action="/user/login/dashboard" method="post" class="form"> 
+    <h1>log in form</h1>
     <div class="content">
       <div>
         <input
@@ -23,12 +23,23 @@
           required
         />
       </div>
-      <p class="error-msg">{{erromsg}}</p>
+      <p class="error-msg">{{errormsg}} <a href="/user/join">{{signup}}</a></p>
       <div class="btns">
         <button type="submit">log in</button>
         <button type="button"> <a href="/">home</a></button>
       </div>
     </div>
   </form>
+  <div class="logo"> 
+     {{> logo}}
+     {{#if err }}
+    <div class="error-div">
+      <i class="fas fa-times-circle icon"></i>
+      {{msg}}
+      {{errormsg}}
+    </div>
+   {{/if}}
+  </div>
+ 
 </div>
 {{>footer}}

@@ -13,7 +13,8 @@
     </div>
     <div class="cont one">
       <button><a href="/users">read posts</a></button>
-      <button><a href="#create-post">create post</a></button>  <button><a href="/user/login/dashboard/partner">partner</a></button>
+      <button><a href="#create-post">create post</a></button> <button><a
+          href="/user/login/dashboard/partner">partner</a></button>
       <button><a href="#update">update profile</a></button>
       <button><a href="/">log out</a></button>
     </div>
@@ -23,6 +24,44 @@
       <div class="small-screens">
         <div class="menu-img">
           <img src="/{{idImage}}" alt="">
+        </div>
+        <div class="menu_list">
+          <div class="header-content">
+            <div class="img">
+              <img src="/{{idImage}}" alt="">
+            </div>
+            <div class="desc">
+              <h1>{{idName}}</h1>
+              <p>{{idEmail}}</p>
+            </div>
+          </div>
+          <hr>
+          <div class="main-content">
+            <div class="content">
+              <ul class="lists">
+                <button class="caption">post</button>
+                <button><a href="/users/">read posts</a></button>
+                <button><a href="#create-post">create post</a></button>
+                <button><a href="#update">update post</a></button>
+              </ul>
+            </div>
+            <div class="content">
+               <ul class="lists">
+                <button class="caption">billing</button>
+                <button><a href="#">billing</a></button>
+                <button><a href="#">partner</a></button>
+                <button><a href="#">support</a></button>
+              </ul>
+            </div>
+            <div class="content">
+               <ul class="lists">
+                <button class="caption">setup</button>
+                <button><a href="#update">update profile</a></button>
+                <button><a href="#">invite</a></button>
+                <button><a href="/">log out</a></button>
+              </ul>
+            </div>
+          </div>
         </div>
         <h1>Da<span>shboa</span>rD</h1>
       </div>
@@ -37,60 +76,92 @@
       </div>
     </div>
     <div class="main">
-        <div class="left-board">
-          <h2>welcome!</h2>
-          <div class="left">
-            <h1>
-              welcome
-              <span>{{idName}}.</span>
-            </h1>
-            <p>welcome {{firstName}} to your <span class="span-main">Da<span class="span">shboa</span>rD</span>. <br> learn more about GMinds and explore the site as much as you can. We're here to help you out with all you need. <br> you can start by creating a post</p>
-            <button><a href="#create-post">write post</a></button>
+      <div class="left-board">
+        <h2>welcome!</h2>
+        <div class="left">
+          <h1>
+            welcome
+            <span>{{idName}}.</span>
+          </h1>
+          <p>welcome {{firstName}} to your <span class="span-main">Da<span class="span">shboa</span>rD</span>. <br>
+            learn more about GMinds and explore the site as much as you can. We're here to help you out with all you
+            need. <br> you can start by creating a post</p>
+          <button><a href="#create-post">write post</a></button>
+        </div>
+      </div>
+      <div class="right-board">
+        <h2>setup..</h2>
+        <div class="right">
+
+          <div class="blog">
+            <h3>lorem ipsum </h3>
+            <i class="fas fa-arrow-right arrow"></i>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vitae
+              ipsum doloribus tenetur voluptate autem inventore libero
+              doloremque saepe, quasi aperiam.</p>
+
+          </div>
+          <div class="blog">
+            <h3>lorem ipsum</h3>
+            <i class="fas fa-arrow-right arrow"></i>
+            <p>Ea optio itaque possimus distinctio reiciendis fuga. Harum
+              mollitia deserunt hic, ducimus consectetur suscipit rem possimus
+              quia, quidem tempore sunt!</p>
           </div>
         </div>
-        <div class="right-board">
-          <h2>setup..</h2>
-          <div class="right">
-
-            <div class="blog">
-              <h3>lorem ipsum </h3>
-              <i class="fas fa-arrow-right arrow"></i>
-              <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vitae
-                ipsum doloribus tenetur voluptate autem inventore libero
-                doloremque saepe, quasi aperiam.</p>
-
-            </div>
-            <div class="blog">
-              <h3>lorem ipsum</h3>
-              <i class="fas fa-arrow-right arrow"></i>
-              <p>Ea optio itaque possimus distinctio reiciendis fuga. Harum
-                mollitia deserunt hic, ducimus consectetur suscipit rem possimus
-                quia, quidem tempore sunt!</p>
-            </div>
-          </div>
-        </div>    </div>
+      </div>
+    </div>
   </div>
   <div class="bottom-content">
     <div class="left-div">
       <div class="content">
         <h3>Hi! {{firstName}}</h3>
-        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sed enim recusandae similique aperiam ut consectetur debitis vero iure doloremque fugit?</p>
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sed enim recusandae similique aperiam ut
+          consectetur debitis vero iure doloremque fugit?</p>
         <button>button</button>
       </div>
       <div class="content">
         <h3>lorem dolor</h3>
-        <p>Qui similique aspernatur eum beatae odio, eaque sed expedita. Ipsum ad eos, voluptate dolor beatae et nam laudantium? Rerum, quas?</p>
-         <button>button</button>
+        <p>Qui similique aspernatur eum beatae odio, eaque sed expedita. Ipsum ad eos, voluptate dolor beatae et nam
+          laudantium? Rerum, quas?</p>
+        <button>button</button>
       </div>
-     
+
     </div>
-        <div class="right-div" id="create-post">
-          {{>blog}}
-        </div>
-        
+    <div class="right-div" id="create-post">
+      {{>blog}}
+    </div>
+
   </div>
   <div id="update">
-    <br> <br>
-    update profile here.............................
+    <form action="/user/api/users/" method="put">
+      <h1>update profile</h1>
+      <div class="info">
+        <div class="initial-profile">
+          <input type="text" name="initial_username" placeholder="Enter username...." required>
+          <input type="email" name="initial_email" placeholder="Enter email....." required>
+          <input type="password" name="initial_password" placeholder="Enter your password" required>
+        </div>
+        <div class="final-profile">
+          <div>
+            <label for="final_username">new username:</label>
+            <input type="text" name="final_username" placeholder="Enter new username...." id="final_username">
+          </div>
+          <div>
+            <label for="final_email">new email:</label>
+            <input type="email" name="final_email" placeholder="Enter new email....." id="final_email">
+          </div>
+          <div>
+            <label for="final_password">new password:</label>
+            <input type="password" name="final_password" placeholder="Enter your password" id="final_password">
+
+          </div>
+          <div>
+            <label for="userImage">choose new profile photo:<1Mb </label>
+            <input type="file" name="userImage" value="choose new profile image" placeholder="choose new profile image">
+          </div>
+        </div>
+      </div>
+      <button type="submit">update profile</button>
+    </form>
   </div>
-</div>

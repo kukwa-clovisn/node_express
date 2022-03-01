@@ -9,6 +9,12 @@ const messaegbird = require("messagebird")("xd1lpIuDDkVmXkOhEAu6eBtqd");
 require("dotenv").config();
 const tokenCheck = require("../middlewares/auth/tokenCheck");
 const userAuth = require("../middlewares/auth/userAuth");
+const {
+     check,
+     validationResult
+} = require('express-validator')
+
+
 // setting up the multer =====================================================>
 const storage = multer.diskStorage({
      destination: function (req, file, cb) {
@@ -40,17 +46,32 @@ const upload = multer({
      fileFilter: fileFilter,
 });
 
-router.get("/", (req, res) => {
-     postModel.find({}, (err, data) => {
+router.get("/api/users", (req, res) => {
+     userModel.find({}, (err, data) => {
           if (err) {
                console.log(error)
+               res.status(404).send(err)
           }
-          res.render("user"), {
-               posts: data
-          };
+          res.status(200).json(data);
      })
 
 });
+
+router.put("/api/users/:user", (req, res) => {
+     const {
+          user
+     } = req.params;
+     const {
+          initial_username,
+          finam_username,
+          initial_email,
+          final_email,
+          initial_password,
+          final_password
+     } = req.body;
+     console.log(user, "this is the user");
+     console.log(initial_username, finam_username, initial_email, final_email, initial_password, final_password, "this are the params");
+})
 
 // making a post request to "/api/blog/store" === === === === =>
 router
@@ -84,7 +105,25 @@ router
      .get((req, res) => {
           res.render("user");
      })
-     .post(upload.single("userImage"), async (req, res) => {
+     .post(upload.single("userImage"), [
+          check('username').not().isEmpty().withMessage('username can not be empty or only numbers').trim().escape(),
+          check('password').isLength({
+               min: 5
+          }).trim().escape().withMessage('password should contain at least 5 characters'),
+          check('email').isEmail().normalizeEmail()
+     ], async (req, res) => {
+          let checkError = validationResult(req);
+          if (!checkError.isEmpty()) {
+               let msgs = '';
+               for (let i = 0; i < checkError.errors.length; i++) {
+                    msgs += checkError.errors[i].msg
+               }
+               console.log(checkError.errors)
+               return res.render('user', {
+                    err: true,
+                    errormsg: msgs
+               })
+          }
           try {
                // securing password
                let salt = await bcrypt.genSalt();
@@ -114,16 +153,18 @@ router
                     console.log(existingName);
                     console.log(capitalizedName);
                     console.log(`user already exists with name ${req.body.username}`);
-                    return res.render("error", {
-                         idError: `Sorry name ${req.body.username} already exist as a user. change username`,
+                    return res.status(403).render("user", {
+                         err: true,
+                         errormsg: `Sorry name ${req.body.username} already exist as a user. change username`,
                          signup: "signup",
                     });
                }
 
                if (existingEmail) {
                     console.log("user email already exist....");
-                    return res.render("error", {
-                         idError: ` Sorry ${req.body.username},"${req.body.email}"has already being used. Try to signup with another email address. thanks `,
+                    return res.status(403).render("user", {
+                         err: true,
+                         errormsg: ` Sorry ${req.body.username},"${req.body.email}"has already being used. Try to signup with another email address. thanks `,
                          signup: "signup",
                     });
                }
@@ -138,25 +179,22 @@ router
                console.log(newUser);
                userModel.create(newUser);
                req.session.isAuth = true;
-               res.render("success", {
-                    status: "sign up",
-               });
-               //  res.render("userAuth1");
+               res.render("success");
+
+               // res.status(201).render("success", {
+               //      status: "sign up",
+               // });
+               // res.render("userAuth1");
           } catch (err) {
                console.log(err, "error..............");
           }
      });
-
-router.get("/dashboard", (req, res) => {
-     res.render("dashboard");
-});
-
 router.post("/join/tel", (req, res) => {
      let numb = req.body.number;
      console.log(req.body);
      messaegbird.verify.create(
           numb, {
-               template: "your verification code is... %token",
+               template: "From CodingHerald, your verification code is... %token",
           },
           (err, response) => {
                if (err) {
@@ -187,9 +225,16 @@ router.post("/join/tel/code", (req, res) => {
                     id: id,
                });
           } else {
+
+               userModel.create(newUser);
+               req.session.isAuth = true;
                res.render("success");
           }
      });
+});
+
+router.get("/dashboard", (req, res) => {
+     res.render("dashboard");
 });
 
 // login authentication api and middleware===============================>
@@ -198,8 +243,26 @@ router.get("/login", (req, res) => {
 });
 router.route("/login/dashboard").get(userAuth, (req, res) => {
      res.render("dashboard")
-}).post((req, res) => {
+}).post([
+     check('username').not().isEmpty().withMessage('username can not be empty or only numbers').trim().escape(),
+     check('password').isLength({
+          min: 5
+     }).trim().escape().withMessage('password should contain at least 5 characters')
+], (req, res) => {
      console.log(req.body);
+     const errorResult = validationResult(req);
+     if (!errorResult.isEmpty()) {
+          console.log(errorResult.errors)
+          let msgs = '';
+          for (let i = 0; i < errorResult.errors.length; i++) {
+               msgs += errorResult.errors[i].msg; + "  "
+          }
+          return res.render('login', {
+               err: true,
+               msg: msgs
+          })
+
+     }
      let checkUser = req.body.username;
 
      let searchName = "";
@@ -213,7 +276,7 @@ router.route("/login/dashboard").get(userAuth, (req, res) => {
      console.log(searchName)
      searchName = searchName.slice(0, -1);
      userModel.findOne({
-               searchName,
+               "username": searchName,
           },
           async (err, data) => {
                if (err) {
@@ -230,33 +293,41 @@ router.route("/login/dashboard").get(userAuth, (req, res) => {
 
                          if (result === true) {
                               req.session.isAuth = true;
-                              res.render("dashboard", {
+
+
+
+                              res.status(200).render("dashboard", {
                                    idName: data.username,
                                    idEmail: data.email,
                                    idImage: data.profileImg,
                                    firstName: firstName
                               });
+
+
                               return console.log(
                                    `user "${req.body.username}" successfully logged in....`
                               );
                          } else {
-                              res.render("error", {
-                                   idError: "wrong password...",
-                                   signup: "sign up instead",
+                              res.status(403).render("login", {
+                                   err: true,
+                                   errormsg: "incorrect password...!"
                               });
                               return console.log(
                                    `user ${req.body.username} trying to log in with a wrong password.`
                               );
                          }
                     } else {
-                         res.render("error", {
-                              idError: `user "${req.body.username}" has no account`,
-                              signup: "sign up instead",
+                         res.status(401).render("login", {
+                              err: true,
+                              errormsg: `user "${req.body.username}" has no account!`,
+                              signup: "signup"
                          });
+
                          return console.log("user has no account...");
                     }
                }
           }
      );
 });
+// router.put("/")
 module.exports = router;

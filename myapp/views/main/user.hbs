@@ -31,6 +31,10 @@
       </div>
     </div>
   </form>
+  {{#if err}}
+  <div class="error-div">
+    <i class="fas fa-times-circle icon"></i>
+    {{errormsg}}
+  </div>
+  {{/if}}
 </div>
-<br>
-{{>footer}}

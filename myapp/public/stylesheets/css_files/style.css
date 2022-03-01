@@ -1,12 +1,19 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,700;0,900;1,400&family=Russo+One&display=swap");
+h1, h2, h3, h4, h5, h6, a, ul {
+  padding: 0;
+  margin: 0;
+  text-decoration: none;
+  font-family: "Poppins", sans-serif;
+  color: #1e1a33;
+}
+
 body {
-  /* padding: 0px 50px; */
   padding: 0;
   margin: 0;
   font: 14px "Poppins", Helvetica, Arial, sans-serif;
-  background: radial-gradient(#edf2f8 0%, #b0e1f5 100%);
+  background: radial-gradient(#cbcfd3 0%, #9cbecc 100%);
   overflow-x: hidden;
-  background: url(../../images/bg0.jpg);
+  background: #3d3d54;
   background-size: cover;
   background-repeat: no-repeat;
   background-blend-mode: darken;
@@ -62,6 +69,7 @@ html {
 button {
   width: 300px;
   height: 47px;
+  z-index: 1;
   border: none;
   cursor: pointer;
   background: #d64501;
@@ -92,98 +100,366 @@ button:hover {
 button:active {
   transform: scale(0.8);
 }
-
-main {
-  width: 100vw;
-  height: 100vh;
-  padding: 0 10px;
-}
-
-@media screen and (max-width: 1000px) {
-  .main {
-    padding-top: 13vh;
+@media screen and (max-width: 768px) {
+  button {
+    height: 120px;
+    width: 450px;
+    border-radius: 10px;
+    margin: 10px auto;
+    font-size: 35px;
+  }
+  button a {
+    font-size: 35px;
   }
 }
-.main {
-  padding-top: 121px;
-  /* blogs content=============================> */
+
+.landing_page {
+  width: 100vw;
+  height: 100vh;
+  background: #0f0f1f;
+  margin: 0;
+  padding-bottom: 20px;
+  position: relative;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  overflow: hidden;
 }
-.main .section {
-  width: 55%;
-  height: 145px;
+.landing_page header {
+  width: 100%;
+  height: 140px;
   display: flex;
-  margin: 0 auto;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
-  padding: 0 10px;
+  position: relative;
+  z-index: 1;
 }
-.main .section .nav {
+.landing_page header .left-header {
+  width: 50%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.landing_page header .left-header h1 {
+  font: 800 34px "Poppins", "Russo One", sans-serif;
+  cursor: pointer;
+  color: #79031a;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.landing_page header .left-header h1 span {
+  color: goldenrod;
   text-transform: capitalize;
-  font-size: 30px;
-  color: white;
-  font-family: "Poppins", sans-serif;
+}
+.landing_page header .left-header h1 span::first-letter {
+  color: #5e025e;
+  font-size: 100px;
+}
+.landing_page header .right-header {
+  width: 35%;
+  height: 100%;
   display: flex;
   justify-content: space-evenly;
   align-items: center;
-  font-weight: 700;
+}
+.landing_page header .right-header li {
+  list-style-type: none;
+  width: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+.landing_page header .right-header li a {
+  width: 100%;
+  height: 50%;
+  text-decoration: none;
   cursor: pointer;
-  position: relative;
-  width: 240px;
-  height: 70px;
-  border-radius: 3px;
-  background: #551a8b;
-  background: linear-gradient(to top left, #f0772a 0%, #3f0575 100%);
-  transition: all 1s ease;
-  transform: rotateY(-45deg);
-  animation: nav 2s infinite linear alternate forwards;
-  animation-timing-function: ease-in-out;
+  color: white;
+  text-transform: capitalize;
+  font: 600 21px "Poppins", sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.3s ease;
 }
-.main .section .nav:last-child {
-  color: #e2e0e0;
-  background: #813570;
-  background: linear-gradient(to bottom right, #f0772b 0%, #551a8b 100%);
-  transform: rotateY(45deg);
+.landing_page header .right-header li a:hover {
+  transform: scale(1.05);
 }
-.main .section .nav:hover {
-  transform: rotateY(0);
+.landing_page header .handlebar {
+  display: none;
 }
-@keyframes nav {
-  to {
-    transform: rotateY(0);
+@media screen and (max-width: 712px) {
+  .landing_page header {
+    height: 210px;
+    border-bottom: 2px solid white;
+  }
+  .landing_page header .left-header {
+    width: 80%;
+  }
+  .landing_page header .left-header h1 {
+    font-size: 40px;
+    color: #f15a40;
+  }
+  .landing_page header .left-header h1 span::first-letter {
+    font-size: 150px;
+  }
+  .landing_page header .right-header {
+    display: none;
+  }
+  .landing_page header .handlebar {
+    width: 20%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .landing_page header .handlebar i {
+    font-size: 70px;
+    color: white;
   }
 }
-.main .notice {
-  width: 90%;
-  height: 300px;
-  margin: 10px auto;
+.landing_page .landing-body {
+  width: 100%;
+  height: 73%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+}
+.landing_page .landing-body .container {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-direction: column;
+  width: 80%;
+  height: 100%;
+  padding-top: 20px;
+}
+.landing_page .landing-body .container .logo {
+  width: auto;
+  height: 160px;
+}
+.landing_page .landing-body .container h1 {
+  color: white;
+  font: 600 35px "Poppins", sans-serif;
+}
+.landing_page .landing-body .container p {
+  color: white;
+}
+.landing_page .landing-body .container button {
+  width: 300px;
+  height: 65px;
+  display: block;
+  border-radius: 6px;
+  background: #850173;
+}
+.landing_page .landing-body .container button a {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+@media screen and (max-width: 655px) {
+  .landing_page .landing-body .container .logo {
+    height: 270px;
+  }
+  .landing_page .landing-body .container h1 {
+    font-size: 55px;
+    text-align: center;
+  }
+  .landing_page .landing-body .container p {
+    font-size: 35px;
+  }
+  .landing_page .landing-body .container .main-btn {
+    width: 410px;
+    height: 120px;
+    font-size: 33px;
+  }
+  .landing_page .landing-body .container .main-btn a {
+    font-size: 33px;
+  }
+}
+@media screen and (max-width: 1000px) {
+  .landing_page .landing-body {
+    height: 82%;
+  }
+}
+.landing_page .canvas {
+  bottom: 0;
+  left: 0;
+  position: absolute;
+  bottom: 40%;
+  left: 50px;
+}
+.landing_page .canvas .shape0 {
+  width: 1500px;
+  height: 1100px;
+  position: absolute;
+  top: -730px;
+  transform: rotateZ(-25deg);
+  left: -420px;
+  background: white;
+  background: url(../../images/Laptop.jpg);
+  background-size: cover;
+  z-index: 0.1;
+  opacity: 0.5;
+}
+.landing_page .canvas .shape1 {
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  position: absolute;
+  right: 350px;
+  bottom: -20px;
+  background: linear-gradient(to bottom left, purple 0%, white 50%, green 100%);
+  box-shadow: 2px 3px 1px 5px green;
+  opacity: 0.1;
+  background: gold;
+  z-index: 0.1;
+}
+.landing_page .canvas .shape2 {
+  width: 100px;
+  height: 120px;
+  border-radius: 100px 0 100% 50%;
+  background: teal;
+  bottom: 80px;
+  left: 260px;
+  position: absolute;
+  opacity: 0.1;
+  animation: turn 4s infinite linear alternate forwards;
+}
+.landing_page .canvas .shape3 {
+  width: 50px;
+  height: 50px;
+  border-radius: 100%;
+  background: white;
+  position: absolute;
+  bottom: 50px;
+  left: 200px;
+  opacity: 0.1;
+  animation: real 5s infinite linear alternate forwards;
+}
+
+@keyframes turn {
+  to {
+    bottom: 150px;
+  }
+}
+@keyframes real {
+  50% {
+    left: 400px;
+  }
+  to {
+    left: 50px;
+    top: 250px;
+    transform: scale(0.01) rotateZ(360deg);
+  }
+}
+.main {
+  padding: 0;
+  background: transparent;
+  position: relative;
+}
+.main .section {
+  width: 100vw;
+  height: fit-content;
+  margin: 0 auto;
+  background: linear-gradient(to bottom, #0f0f1f, #404053);
+}
+.main .section .aside {
+  width: 85%;
+  height: 85vh;
+  background: transparent;
+  padding: 33px 10px;
+  position: relative;
+  z-index: 1;
+  margin: auto;
+}
+.main .section .aside h1 {
+  background: linear-gradient(to bottom right, #b83704, #07a1c4);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-transform: capitalize;
+  font-size: 5rem;
+  text-align: center;
+  padding: 10px;
+  font-weight: 800;
+  font-family: "Poppins", sans-serif;
+}
+.main .section .aside p {
+  font: 500 1.6rem "Poppins", sans-serif;
+  text-align: center;
+  color: white;
+  width: 60%;
+  margin: auto;
+  padding: 10px;
+}
+.main .section .aside button {
+  width: 300px;
+  height: 60px;
   border-radius: 5px;
-  background: linear-gradient(to bottom, #41037a 0%, #bb4a04 100%);
+  background: linear-gradient(to top right, #b83704, #07a1c4);
+  background: #495765;
+  margin: 20px auto;
+  transition: all 0.3s ease;
+}
+.main .section .aside button a {
+  color: white;
+  font-size: 1.2rem;
+}
+.main .section .aside button:hover {
+  transform: rotateZ(3deg) translateX(20px);
+}
+.main .main-content {
+  width: 100vw;
+  height: fit-content;
+  background: linear-gradient(to bottom, #404053, #84848c);
+  margin: 0;
+  padding: 0;
+  padding-top: 20px;
+  padding-bottom: 60px;
+}
+.main .main-content .notice {
+  width: 90%;
+  height: 320px;
+  margin: 0 auto;
+  border-radius: 5px;
+  background: transparent;
   display: flex;
   justify-content: space-evenly;
   align-items: center;
   flex-direction: row;
   position: relative;
+  left: -110vw;
   z-index: 0.8;
+  transition: all 0.3s ease;
 }
-.main .notice .content {
+.main .main-content .notice .content {
   width: 30%;
-  height: 98%;
+  height: fit-content;
+  padding: 20px 0;
 }
-.main .notice .content h3 {
+.main .main-content .notice .content h3 {
   text-align: center;
   text-transform: capitalize;
   color: white;
-  font-size: 25px;
-  padding: 10px;
+  font-size: 27px;
+  padding: 13px;
   font-family: "Poppins", sans-serif;
   font-weight: 600;
   transition: all 0.4s ease;
 }
-.main .notice .content h3:hover {
+.main .main-content .notice .content h3:hover {
   text-decoration: underline;
   cursor: pointer;
 }
-.main .notice .content p {
+.main .main-content .notice .content p {
   text-align: center;
   font-family: "Poppins", sans-serif;
   width: 85%;
@@ -191,70 +467,98 @@ main {
   font-size: 16px;
   font-weight: 300;
   overflow: hidden;
+  padding: 5px;
   white-space: pre-wrap;
   color: #ece7e7;
 }
-.main .notice button {
+.main .main-content .notice button {
   background: white;
   margin: 20px auto;
+  height: 60px;
+  border-radius: 6px;
 }
-.main .notice button a {
-  color: #520452;
-  font-weight: 600;
+.main .main-content .notice button a {
+  color: #820682;
+  font-weight: 700;
+  font-size: 1.2rem;
   font-family: "Poppins", sans-serif;
 }
+.main .main-content .notice button:hover {
+  background: #3f5062;
+}
+.main .main-content .notice button:hover a {
+  color: white;
+}
 @media screen and (max-width: 1060px) {
-  .main .notice {
+  .main .main-content .notice {
     height: auto;
+    background: transparent;
     padding: 20px;
     flex-direction: column;
   }
-  .main .notice .content {
-    height: 350px;
-    width: 80%;
+  .main .main-content .notice .content {
+    height: 450px;
+    margin: 20px;
+    padding-bottom: 30px;
+    width: 100%;
+    border-radius: 10px;
   }
-  .main .notice .content p {
+  .main .main-content .notice .content p {
     color: white;
-    font-size: 23px;
+    font-size: 28px;
     width: 95%;
   }
-  .main .notice .content h3 {
-    font-size: 30px;
+  .main .main-content .notice .content h3 {
+    font-size: 40px;
+  }
+  .main .main-content .notice .content button {
+    width: 60%;
+    height: 70px;
+  }
+  .main .main-content .notice .content button a {
+    font-size: 33px;
+    border-radius: 5px;
   }
 }
 @media screen and (max-width: 1000px) {
-  .main .main .section {
+  .main .main-content .section {
     width: 70%;
+    height: 300px;
+    margin-top: 140px;
   }
-  .main .main .section .nav {
-    width: 300px;
-    height: 90px;
+  .main .main-content .section .nav {
+    width: 315px;
+    height: 140px;
     font-size: 35px;
   }
 }
-.main .search {
+.main .main-content .search {
   width: 70%;
-  height: 90px;
+  height: 120px;
   margin: 0 auto;
+  position: relative;
+  right: -110vw;
+  transition: all 0.5s ease;
 }
-.main .search form {
+.main .main-content .search form {
   display: flex;
   justify-content: center;
   align-items: center;
   width: 100%;
   height: 100%;
 }
-.main .search form input {
+.main .main-content .search form input {
   width: 500px;
   height: 50px;
   border-radius: 30px 0 0 30px;
   border: none;
-  background: white;
+  background: #dbdbdf;
+  background-color: white;
   padding-left: 20px;
   outline: none;
   position: relative;
 }
-.main .search form button {
+.main .main-content .search form button {
   width: 150px;
   height: 50px;
   border: none;
@@ -265,40 +569,86 @@ main {
   color: white;
   background: #681954;
 }
-.main .search form button i {
+.main .main-content .search form button i {
   font-weight: 800;
   font-size: 30px;
   cursor: pointer;
 }
 @media screen and (max-width: 1000px) {
-  .main .search {
+  .main .main-content .search {
     height: 140px;
-    margin: 1vh auto;
-    width: 90vw;
+    margin: 60px auto;
+    width: 95vw;
   }
-  .main .search form input {
+  .main .main-content .search form input {
     height: 120px;
     font-size: 35px;
     padding-left: 40px;
     padding-right: 20px;
     border-radius: 70px 0 0 70px;
+    width: 80%;
   }
-  .main .search form button {
+  .main .main-content .search form button {
     height: 120px;
     border-radius: 0 70px 70px 0;
     font-size: 35px;
+    width: 20%;
   }
 }
-.main .blogs {
+.main .main-content .bn {
+  width: 250px;
+  height: 60px;
+  margin: auto;
+  position: relative;
+  bottom: -50vh;
+  border-radius: 30px;
+  background-color: purple;
+  font: 600 22px "Poppins", sans-serif;
+  font-family: cursive;
+}
+@media screen and (max-width: 768px) {
+  .main .main-content .bn {
+    width: 450px;
+    height: 110px;
+    font-size: 33px;
+  }
+}
+.main:hover .main-content .notice {
+  animation: notice 1s 1 alternate ease forwards;
+}
+.main:hover .main-content .search {
+  animation: search 1.5s 1 ease forwards;
+}
+.main:hover .main-content .bn {
+  animation: bn 2s ease forwards;
+}
+
+@keyframes notice {
+  to {
+    left: 0;
+  }
+}
+@keyframes search {
+  to {
+    right: 0;
+  }
+}
+@keyframes bn {
+  to {
+    bottom: 0;
+  }
+}
+/* blogs content=============================> */
+.blogs {
   display: flex;
   justify-content: space-between;
   align-items: center;
   flex-direction: column;
   width: 94vw;
   margin: 2vh auto;
-  padding: 10px;
+  padding-top: 120px;
 }
-.main .blogs .blog {
+.blogs .blog {
   width: 90%;
   min-height: 200px;
   padding: 15px;
@@ -306,8 +656,9 @@ main {
   margin: 40px 10px;
   position: relative;
   background-color: white;
+  border: 1px solid #d5d5d6;
 }
-.main .blogs .blog h1 {
+.blogs .blog h1 {
   text-align: center;
   text-transform: capitalize;
   font-size: 25px;
@@ -319,7 +670,7 @@ main {
   font-family: "Poppins", sans-serif;
   font-weight: 700;
 }
-.main .blogs .blog .content {
+.blogs .blog .content {
   width: 85%;
   border-radius: 5px;
   min-height: 170px;
@@ -331,7 +682,7 @@ main {
   align-items: center;
   flex-direction: column;
 }
-.main .blogs .blog p {
+.blogs .blog p {
   height: 65%;
   width: 95%;
   margin: 0 auto;
@@ -351,7 +702,7 @@ main {
   justify-content: center;
   align-items: center;
 }
-.main .blogs .blog h3 {
+.blogs .blog h3 {
   font-weight: 300;
   font-size: 10px;
   height: 40px;
@@ -369,7 +720,7 @@ main {
   bottom: 2px;
   margin: 0 auto;
 }
-.main .blogs .blog h3 span {
+.blogs .blog h3 span {
   text-transform: capitalize;
   color: #312f2f;
   font-weight: 600;
@@ -377,35 +728,35 @@ main {
   transition: all 0.3s ease;
   padding: 0;
 }
-.main .blogs .blog h3 span:hover {
+.blogs .blog h3 span:hover {
   text-decoration: underline;
 }
 @media screen and (max-width: 1111px) {
-  .main .blogs .blog h1 {
+  .blogs .blog h1 {
     font-size: 35px;
     width: 100%;
     padding-left: 0;
     text-align: center;
   }
-  .main .blogs .blog p {
+  .blogs .blog p {
     font-size: 25px;
     line-height: 35px;
     font-weight: 500;
     word-spacing: 2px;
   }
-  .main .blogs .blog h3 {
+  .blogs .blog h3 {
     font-size: 19px;
     height: 80px;
   }
-  .main .blogs .blog h3 span {
+  .blogs .blog h3 span {
     font-size: 21px;
   }
 }
-.main .blogs .err {
+.blogs .err {
   width: 90%;
   min-height: 5vh;
 }
-.main .blogs .err h1 {
+.blogs .err h1 {
   text-align: center;
   font-size: 120px;
   color: white;
@@ -413,7 +764,7 @@ main {
   font-family: "Poppins", sans-serif;
   text-transform: capitalize;
 }
-.main .blogs .err p {
+.blogs .err p {
   text-align: center;
   text-transform: capitalize;
   color: white;
@@ -425,14 +776,23 @@ main {
 .write {
   width: 80%;
   height: 10vh;
+  position: relative;
+  z-index: 1;
 }
 .write h1 {
   text-transform: capitalize;
   text-align: center;
-  color: white;
+  color: #484849;
+  background: linear-gradient(to bottom right, #88ebfa, white);
+  background-clip: text;
+  font: 700 1.3rem "Poppins", sans-serif;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
-.write p {
-  text-align: center;
+@media screen and (max-width: 1000px) {
+  .write h1 {
+    font-size: 45px;
+  }
 }
 
 .add {
@@ -445,11 +805,17 @@ main {
 }
 .add .form {
   width: 550px;
-  height: 80vh;
+  height: 500px;
   padding: 10px;
   border-radius: 5px;
   background: #dddada;
   position: relative;
+}
+@media screen and (max-width: 1000px) {
+  .add .form {
+    width: 650px;
+    height: 620px;
+  }
 }
 .add .form h2 {
   text-align: center;
@@ -472,6 +838,12 @@ main {
   font-family: "Poppins", sans-serif;
   margin: 15px auto;
 }
+@media screen and (max-width: 1000px) {
+  .add .form input {
+    height: 70px;
+    font-size: 23px;
+  }
+}
 .add .form #post {
   width: 90%;
   display: block;
@@ -484,6 +856,12 @@ main {
   padding: 10px;
   font-weight: 400;
   color: #272525;
+}
+@media screen and (max-width: 1000px) {
+  .add .form #post {
+    height: 250px;
+    font-size: 25px;
+  }
 }
 .add .form button {
   width: 90%;
@@ -500,6 +878,12 @@ main {
   text-transform: capitalize;
 }
 @media screen and (max-width: 1000px) {
+  .add .form button {
+    height: 80px;
+    font-size: 24px;
+  }
+}
+@media screen and (max-width: 768px) {
   .add .form {
     width: 90vw;
     height: 1350px;
@@ -531,6 +915,123 @@ main {
 
 .back {
   background: #081736;
+}
+
+#ceo {
+  width: 100vw;
+  height: fit-content;
+  background: linear-gradient(to bottom, #84848c 0%, #151529 40%);
+  padding: 50px auto;
+  position: relative;
+  z-index: 1;
+  margin: 0;
+}
+#ceo h1 {
+  padding-top: 20px;
+  text-align: center;
+  color: white;
+  text-transform: uppercase;
+  font: 900 45px "Poppins", sans-serif;
+}
+#ceo .content {
+  width: 90%;
+  margin: 0 auto;
+  height: fit-content;
+}
+#ceo .content .img {
+  width: 200px;
+  height: 200px;
+  border-radius: 100%;
+  overflow: hidden;
+  margin: 10px auto;
+}
+#ceo .content .img img {
+  height: 100%;
+  width: auto;
+  cursor: pointer;
+  display: block;
+}
+#ceo .content h2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: goldenrod;
+  font: 800 40px "Poppins", sans-serif;
+  cursor: pointer;
+}
+#ceo .content h2 span {
+  color: crimson;
+}
+#ceo .content .others {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  align-content: flex-end;
+  flex-wrap: wrap;
+  width: 90%;
+  margin: 0 auto;
+  height: fit-content;
+  padding: 20px auto;
+  margin-bottom: 40px;
+}
+#ceo .content .others .content {
+  width: 300px;
+  height: 350px;
+  background: white;
+  padding: 10px;
+  margin: 10px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-direction: column;
+  border-radius: 5px;
+}
+#ceo .content .others .content h2 {
+  font: 700 33px "Poppins", sans-serif;
+  text-transform: capitalize;
+  padding-bottom: 0;
+  margin: 0;
+  background: linear-gradient(to left, goldenrod, crimson);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+#ceo .content .others .content p {
+  font: 500 19px "Poppins", sans-serif;
+  color: #545457;
+  padding: 10px;
+}
+#ceo .content .others .content button {
+  width: 300px;
+  height: 60px;
+  background: purple;
+}
+#ceo .content .others .content button a {
+  width: 100%;
+  height: 100%;
+  color: white;
+}
+@media screen and (max-width: 1000px) {
+  #ceo .content .others .content {
+    width: 600px;
+    height: 430px;
+  }
+  #ceo .content .others .content h2 {
+    font-size: 38px;
+  }
+  #ceo .content .others .content p {
+    text-align: center;
+    font-size: 32px;
+  }
+  #ceo .content .others .content button {
+    width: 90%;
+    height: 100px;
+    border-radius: 9px;
+    font-size: 30px;
+  }
+  #ceo .content .others .content button a {
+    font-size: 30px;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */

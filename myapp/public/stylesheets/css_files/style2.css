@@ -1,15 +1,18 @@
 /* start styling from the log in user form*/
 .user-form {
   width: 100vw;
-  height: 100vh;
+  height: fit-content;
   display: flex;
-  padding-top: 130px;
+  padding: 0 20px;
+  margin-top: 100px;
+  padding-top: 30px;
+  padding-bottom: 30px;
   justify-content: center;
   align-items: center;
-  background: linear-gradient(to bottom, #551a8b 0%, #f0772b 100%);
-  background: transparent;
+  background: linear-gradient(to bottom, #0f0f1f, #404053);
   background-size: cover;
   position: relative;
+  background-attachment: fixed;
 }
 .user-form .form {
   width: 550px;
@@ -85,6 +88,25 @@
   margin: 10px auto;
   font-family: "Poppins", sans-serif;
   color: white;
+}
+.user-form .error-div {
+  width: 350px;
+  height: fit-content;
+  border-radius: 5px;
+  display: flex;
+  padding: 20px;
+  position: relative;
+  left: -40px;
+  justify-content: space-evenly;
+  align-items: center;
+  text-align: center;
+  flex-direction: column;
+  background: crimson;
+  color: white;
+  font: 700 24px cursive, sans-serif;
+}
+.user-form .error-div .icon {
+  font-size: 120px;
 }
 @media screen and (max-width: 1000px) {
   .user-form .form {

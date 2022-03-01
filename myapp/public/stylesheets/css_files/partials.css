@@ -1,48 +1,37 @@
+#blur {
+  width: 100vw;
+  height: 100vh;
+  background: #d9d9fc;
+  opacity: 0.7;
+  z-index: 0.1;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
 /* logo==============> */
 #siteLogo {
-  width: 230px;
-  height: 130px;
+  width: 90%;
+  height: 90%;
   padding: 0;
-  margin: 13px auto;
   display: flex;
   justify-content: center;
   align-items: center;
-  color: green;
-  font: 600 34px "Poppins", sans-serif;
-  border-radius: 3px;
-  text-transform: capitalize;
   cursor: pointer;
-  animation: logo 20s infinite linear alternate forwards;
 }
-#siteLogo:first-letter {
-  font-size: 55px;
-  position: relative;
+#siteLogo img {
+  width: auto;
+  height: 100%;
+  border-radius: 5px;
 }
-#siteLogo .span {
-  color: white;
-  display: block;
-  font-size: 23px;
-}
-#siteLogo .span:first-letter {
-  font-size: 100px;
-  color: tomato;
-  font-family: "Russo One", sans-serif;
+@media screen and (max-width: 900px) {
+  #siteLogo {
+    height: 100%;
+    width: auto;
+    border-radius: 10px;
+  }
 }
 
-@keyframes logo {
-  from {
-    background: #1b0000;
-  }
-  50% {
-    background: #180149;
-  }
-  75% {
-    background: #466680;
-  }
-  to {
-    background: #2c624e;
-  }
-}
 /* header==========================> */
 #header {
   width: 100vw;
@@ -55,6 +44,7 @@
   justify-content: space-evenly;
   align-items: center;
   background-color: white;
+  border-bottom: 1px solid #f2f2f5;
 }
 #header .menu {
   width: 20%;
@@ -69,63 +59,78 @@
   cursor: pointer;
   transition: all 0.3s ease;
 }
-@media screen and (max-width: 1000px) {
-  #header #siteLogo {
-    width: 50vw;
-    height: 17vh;
-    font-size: 100px;
-    margin: 50px auto;
-    border-radius: 20px;
-  }
-  #header #siteLogo:first-letter {
-    font-size: 100px;
-  }
-  #header #siteLogo .span {
-    font-size: 70px;
-  }
-  #header #siteLogo .span:first-letter {
-    font-size: 200px;
-  }
-  #header button {
-    height: 80px;
-    font-size: 25px;
-  }
-  #header #header .menu {
+@media screen and (max-width: 900px) {
+  #header .menu {
     display: flex;
+    position: relative;
+    height: 10vh;
   }
-  #header #header .main .icon:hover {
+  #header .menu .icon {
+    font-size: 90px;
+    left: 200px;
+  }
+  #header .menu .icon:hover {
     transform: rotateZ(-90deg);
   }
-  #header #header .main .icon:active {
+  #header .menu .icon:active {
     transform: scale(0.8);
   }
+  #header .menu .menu-list {
+    width: 85vw;
+    height: 1000px;
+    position: absolute;
+    top: 10vh;
+    left: 0;
+    display: none;
+    z-index: 1;
+    background: white;
+    border-radius: 0 0 10px 0;
+    padding: 10px;
+    padding-bottom: 50px;
+    border: 2px solid #ebe7e7;
+  }
+  #header .menu .menu-list .lists {
+    width: 90%;
+    height: 95%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: column;
+  }
+  #header .menu .menu-list .lists li {
+    list-style: none;
+    display: block;
+    width: 100%;
+    height: 150px;
+    background: #020254;
+    border-radius: 10px;
+  }
+  #header .menu .menu-list .lists li a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    color: white;
+    text-transform: capitalize;
+    font: 600 38px "Poppins", sans-serif;
+  }
+  #header .menu:hover .menu-list {
+    display: block;
+  }
 }
-#header h1 {
-  color: #5e1f81;
-  text-transform: capitalize;
-  width: 45%;
-  height: 100%;
-  text-align: center;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
-  font-size: 30px;
+#header .logo {
+  width: auto;
+  height: 90%;
   display: flex;
   justify-content: center;
   align-items: center;
   cursor: pointer;
-  font-weight: 900;
 }
-#header h1:first-letter {
-  font-size: 70px;
-  position: relative;
-}
-#header h1 span {
-  color: red;
-  font-size: 30px;
-}
-#header h1 span:first-letter {
-  font-size: 100px;
-  animation: fun 2s infinite linear alternate forwards;
-  transition: all 0.4s ease;
+@media screen and (max-width: 900px) {
+  #header .logo {
+    width: 80%;
+  }
 }
 #header .navs {
   width: 50%;
@@ -133,6 +138,11 @@
   display: flex;
   justify-content: space-evenly;
   align-items: center;
+}
+@media screen and (max-width: 900px) {
+  #header .navs {
+    display: none;
+  }
 }
 #header nav {
   width: 25%;
@@ -158,19 +168,9 @@
 #header nav a:active {
   color: teal;
 }
-@media screen and (max-width: 1000px) {
+@media screen and (max-width: 900px) {
   #header {
-    height: 130px;
-  }
-  #header .backHome {
-    display: none;
-  }
-  #header .menu {
-    height: 10vh;
-  }
-  #header .menu .icon {
-    font-size: 70px;
-    left: 150px;
+    height: 200px;
   }
 }
 
@@ -247,7 +247,9 @@ footer {
   height: 50px;
   font-size: 11px;
   text-align: center;
-  color: white;
+  color: #7e7e80;
+  z-index: 1;
+  position: relative;
 }
 @media screen and (max-width: 1000px) {
   footer {

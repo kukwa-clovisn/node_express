@@ -1,6 +1,20 @@
 <header id="header">
-  <nav class="menu"><a href="/"><i class="fas fa-bars icon"></i></a></nav>
-  <h1> great <span>minds</span></h1>
+  <nav class="menu">
+    <i class="fas fa-bars icon"></i>
+    <div class="menu-list">
+      <ul class="lists">
+        <li><a href="/users">read posts</a></li>
+        <li><a href="/user/login">create post</a></li>
+        <li><a href="/user/join">sign up</a></li>
+        <li><a href="#search">search a post</a></li>
+        <li><a href="/">home</a></li>
+      </ul>
+    </div>
+    </nav>
+    <div class="logo">
+      {{>logo}}
+    </div>
+  
   <div class="navs">
     <nav class="backHome"><a href="/">home</a></nav>
     <nav class="writeBlog"><a href="/users/">read post</a></nav>

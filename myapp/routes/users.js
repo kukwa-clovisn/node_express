@@ -13,11 +13,11 @@ router.route("/").get((req, res) => {
                     console.log(err);
                }
                if (data.length > 0) {
-                    return res.render("allUsers", {
+                    return res.status(200).render("allUsers", {
                          posts: data,
                     });
                }
-               return res.render("allUsers", {
+               return res.status(404).render("allUsers", {
                     oops: "no items found!",
                })
           })
@@ -28,12 +28,12 @@ router.route("/").get((req, res) => {
                     console.log(err);
                }
                if (data.length > 0) {
-                    res.render("allUsers", {
+                    res.status(200).render("allUsers", {
                          posts: data,
                     });
                     return console.log("getting data from database.....");
                }
-               return res.render("allUsers", {
+               return res.status(404).render("allUsers", {
                     oops: "no items found!",
                })
           })
@@ -76,11 +76,11 @@ router.post("/blog/search", async (req, res) => {
                          console.log(searchList)
                          if (searchList.length > 0) {
                               console.log(searchList);
-                              return res.render("allUsers", {
+                              return res.status(200).render("allUsers", {
                                    posts: searchList,
                               });
                          }
-                         return res.render("allUsers", {
+                         return res.status(404).render("allUsers", {
                               oops: "Ooooops!",
                               noUser: `no matching title =" ${req.body.search}"`,
                          });

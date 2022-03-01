@@ -5,7 +5,10 @@ const mongodbConnect = require('connect-mongodb-session')(session)
 const mongoose = require('mongoose')
 require("dotenv").config()
 
-mongoose.connect("mongodb://localhost:27017/blogdb", {
+const mongo_uri = process.env.MONGO
+
+
+mongoose.connect(mongo_uri, {
      useNewUrlParser: true,
      useUnifiedTopology: true
 }).then(res => console.log("mongodb connected....."))

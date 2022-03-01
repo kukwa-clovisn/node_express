@@ -1,44 +1,101 @@
 {{!-- styling in styles.css --}}
 {{>canvas}}
-{{> header}}
-<div class="main">
+{{!-- {{> header}} --}}
+<div class="landing_page">
+  <header>
+    <nav class="left-header">
+      <h1>Great <span>minds</span></h1>
+    </nav>
+    <nav class="right-header">
+      <li><a href="/user/join">join</a></li>
+      <li><a href="#ceo">CEO</a></li>
+    </nav>
+    <nav class="handlebar"><i class="fas fa-bars"></i></nav>
+  </header>
+  <div class="landing-body">
+    <div class="container">
+      <div class="logo">{{>logo}}</div>
+      <h1>Get the lastest updates here!</h1>
+      <p>Great leaders are great readers.</p>
+      <button type="button" class="main-btn"><a href="#main">get started</a></button>
+    </div>
+  </div>
+  <div class="canvas">
+    <canvas class="shape0"></canvas>
+    <canvas class="shape1"></canvas>
+    <canvas class="shape2"></canvas>
+    <canvas class="shape3"></canvas>
+  </div>
+</div>
+<div class="main" id="main">
   <section class="section">
-    <nav class="nav">recent</nav>
-    <nav class="nav">history</nav>
-  </section>
-  <section class="notice">
-    <div class="content">
-      <h3>read blog</h3>
-      <p>Great Leaders are great Readers. Get in touch with great minds!</p>
-      <button><a href="/users/">read blogs</a></button>
+    <div class="aside">
+      <h1>Get latest updates from favorite writters!</h1>
+      <p>if you desire to be a writter or better still to join the community of writters and publish contents click on
+        the join button below to get started.</p>
+      <button><a href="/user/join">join</a></button>
     </div>
-    <div class="content">
-      <h3>write blog</h3>
-      <p>Get to be a writer. Write and publish your thoughts to the world </p>
-      <button><a href="/user/login">log in</a></button>
+  </section>
 
+  <div class="main-content">
+    <section class="notice">
+      <div class="content">
+        <h3>read blog</h3>
+        <p>Great Leaders are great Readers. Get in touch with great minds!</p>
+        <button><a href="/users/">read blogs</a></button>
+      </div>
+      <div class="content">
+        <h3>write blog</h3>
+        <p>Get to be a writer. Write and publish your thoughts to the world </p>
+        <button><a href="/user/login">log in</a></button>
+
+      </div>
+      <div class="content">
+        <h3>partner</h3>
+        <p>Join our community of great thinkers, writers and be exceptional in
+          everything you do.</p>
+        <button><a href="/user/join">join community</a></button>
+      </div>
+    </section>
+    <section class="search">
+      <form action="/users/blog/search" method="post">
+        <input type="search" name="search" id="search" placeholder="Search by blog title....." required />
+        <button type="submit"><i class="fas fa-search"></i></button>
+      </form>
+    </section>
+    <section class="write">
+      <h1>wanting to write a blog?</h1>
+    </section>
+    <button class="bn"><a href="/user/login">write blog</a></button>
+  </div>
+</div>
+<div id="ceo">
+  <h1>ceo</h1>
+  <div class="content">
+    <div class="img">
+      <img src="/images/n.jpg" alt="">
     </div>
-    <div class="content">
-      <h3>partner</h3>
-      <p>Join our community of great thinkers, writers and be exceptional in
-        everything you do.</p>
-      <button><a href="/user/join">join community</a></button>
+    <h2>Coding <span>Herald</span></h2>
+    <div class="others">
+      <div class="content">
+        <h2>Coding <span>Herald</span></h2>
+        <p>CodingHerald is a young christocentric coder business entrepreneur and more...
+        </p>
+        <button>view portfolio</button>
+      </div>
+      <div class="content">
+        <h2>academy</h2>
+        <p>join my academy and learn coding, fullstack web dev, forex and crypto trading
+        </p>
+        <button>view academy</button>
+      </div>
+      <div class="content">
+        <h2>hire</h2>
+        <p>hit me up for your website your business and more.
+        </p>
+        <button>lets do business</button>
+      </div>
     </div>
-  </section>
-  <section class="search">
-    <form action="/users/blog/search" method="post">
-      <input
-        type="search"
-        name="search"
-        id="search"
-        placeholder="Search by blog title....."
-        required
-      />
-      <button type="submit"><i class="fas fa-search"></i></button>
-    </form>
-  </section>
-  <section class="write">
-    <h1>wanting to write a blog?</h1>
-  </section>
-  <button><a href="/user/login">write blog</a></button>
-</div>{{>footer}}
+  </div>
+  {{>footer}}
+</div>
