@@ -1,10 +1,9 @@
 {{! styling in style3.css }}
-{{>canvas}}
-{{>header}} 
+
 <div class="log-in-form">
-  
   <form action="/user/login/dashboard" method="post" class="form"> 
-    <h1>log in form</h1>
+  <h1>great <span>minds</span></h1>
+    <h3>log in </h3>
     <div class="content">
       <div>
         <input
@@ -23,23 +22,14 @@
           required
         />
       </div>
-      <p class="error-msg">{{errormsg}} <a href="/user/join">{{signup}}</a></p>
+      <p class="error-msg">{{errormsg}} {{msg}} <a href="/user/join">{{signup}}</a></p>
       <div class="btns">
         <button type="submit">log in</button>
         <button type="button"> <a href="/">home</a></button>
       </div>
+      {{>footer}}
     </div>
+    
   </form>
-  <div class="logo"> 
-     {{> logo}}
-     {{#if err }}
-    <div class="error-div">
-      <i class="fas fa-times-circle icon"></i>
-      {{msg}}
-      {{errormsg}}
-    </div>
-   {{/if}}
-  </div>
- 
+  {{>canvas}}
 </div>
-{{>footer}}

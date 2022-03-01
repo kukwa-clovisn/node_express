@@ -1,20 +1,23 @@
 /* styling in style3.css  log in form with mbird forms with success form */
 .log-in-form {
-  width: 90vw;
+  width: 100vw;
   height: 100vh;
-  padding-top: 120px;
   margin: 0 auto;
   position: relative;
   display: flex;
   justify-content: space-evenly;
   align-items: center;
+  background: #ececec;
 }
 .log-in-form .form {
-  width: 500px;
-  height: fit-content;
-  background: #180149;
+  width: 600px;
+  height: 80vh;
+  background: white;
+  margin: auto;
   border-radius: 5px;
-  padding: 20px 10px;
+  position: relative;
+  background: #6da8bb;
+  padding: 20px;
 }
 .log-in-form .form p {
   text-align: center;
@@ -29,7 +32,23 @@
   font: 700 30px "Poppins", sans-serif;
   padding: 10px;
   text-transform: capitalize;
+  color: #b03098;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.log-in-form .form h1 span {
+  color: #512d73;
+}
+.log-in-form .form h1 span::first-letter {
+  font-size: 70px;
+}
+.log-in-form .form h3 {
+  text-align: center;
+  padding: 5px;
+  text-transform: capitalize;
   color: white;
+  font: 600 25px "Poppins", sans-serif;
 }
 .log-in-form .form .content {
   width: 97%;
@@ -37,8 +56,8 @@
 }
 .log-in-form .form .content div {
   width: 100%;
-  height: 40%;
-  margin: -2px auto;
+  height: auto;
+  margin: auto;
   padding: 0;
   display: flex;
   justify-content: center;
@@ -47,7 +66,7 @@
 }
 .log-in-form .form .content div input {
   width: 86%;
-  height: 55px;
+  height: 65px;
   display: flex;
   border: none;
   border-radius: 30px;
@@ -62,15 +81,27 @@
   font: 500 17px "Poppins", sans-serif;
 }
 .log-in-form .form .content div button {
-  width: 50%;
-  height: 60px;
-  border-radius: 30px;
-  background: linear-gradient(to bottom left, #016d01 0%, teal 100%);
+  width: 47%;
+  display: block;
+  height: 65px;
+  border-radius: 3px;
   color: white;
+  background: #4c3b84;
   font: 500 18px "Poppins", sans-serif;
 }
 .log-in-form .form .content div button:last-child {
-  background: linear-gradient(to bottom left, #e40303 0%, #6b1101 100%);
+  background: #b03098;
+}
+.log-in-form .form .content div button:last-child a {
+  font-size: 18px;
+}
+.log-in-form .form .content div.btns {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 100%;
+  height: fit-content;
+  flex-direction: row;
 }
 .log-in-form .form .content .error-msg {
   text-align: center;
@@ -111,59 +142,6 @@
 }
 .log-in-form .logo .error-div .icon {
   font-size: 120px;
-}
-@media screen and (max-width: 1000px) {
-  .log-in-form {
-    padding-top: 30px;
-    height: fit-content;
-    margin-top: 200px;
-    flex-direction: column-reverse;
-  }
-  .log-in-form .form {
-    width: 90vw;
-    height: 1230px;
-    padding: 20px;
-    padding-top: 70px;
-    padding-bottom: 30px;
-    border-radius: 20px;
-    margin-top: 50px;
-  }
-  .log-in-form .form .content {
-    height: 60%;
-  }
-  .log-in-form .form .content div {
-    height: fit-content;
-    padding: 10px 0;
-    margin-top: 20px;
-  }
-  .log-in-form .form .content div input {
-    height: 140px;
-    width: 95%;
-    font-size: 50px;
-    margin-top: 30px;
-    border-radius: 100px;
-  }
-  .log-in-form .form .content div button {
-    height: 150px;
-    margin-top: 20px;
-    width: 87%;
-    font: 500 50px "Poppins", sans-serif;
-  }
-  .log-in-form .form .content div:first-child {
-    height: 350px;
-  }
-  .log-in-form .form .content div:last-child {
-    background: white;
-    border-radius: 10px;
-  }
-  .log-in-form .form .content .error-msg {
-    padding: 15px;
-    color: white;
-    font: 500 33px "Poppins", sans-serif;
-  }
-  .log-in-form .logo {
-    display: none;
-  }
 }
 
 /* mbird===========================> */

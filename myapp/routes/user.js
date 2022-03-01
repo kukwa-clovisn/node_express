@@ -282,9 +282,18 @@ router.route("/login/dashboard").get(userAuth, (req, res) => {
                if (err) {
                     console.log(err);
                } else {
-                    console.log(data.username, searchName);
+                    console.log(data, searchName);
 
-                    if (data.username === searchName) {
+                    if (data === null) {
+                         res.status(401).render("login", {
+                              err: true,
+                              signup: "signup",
+                              errormsg: `user "${req.body.username}" has no account!`,
+                              signup: "signup"
+                         });
+
+                         return console.log("user has no account...");
+                    } else if (data.username === searchName) {
                          let result = await tokenCheck(
                               req.body.password,
                               data.password,
@@ -319,6 +328,7 @@ router.route("/login/dashboard").get(userAuth, (req, res) => {
                     } else {
                          res.status(401).render("login", {
                               err: true,
+                              signup: "signup",
                               errormsg: `user "${req.body.username}" has no account!`,
                               signup: "signup"
                          });
