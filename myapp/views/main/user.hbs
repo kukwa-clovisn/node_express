@@ -15,7 +15,7 @@
           type="text"
           name="username"
           id="newUser"
-          pattern="[a-zA-Z]+[a-zA-Z0-9_]*[\\\\s]?[a-zA-Z]+[a-zA-Z0-9_]*[\s]?[a-zA-Z]+[a-zA-Z0-9_]*[\s]?[a-zA-Z]+[a-zA-Z0-9_]*"
+          pattern="[a-zA-Z]+[a-zA-Z0-9_]*[\\\\\\s]?[a-zA-Z]+[a-zA-Z0-9_]*[\s]?[a-zA-Z]+[a-zA-Z0-9_]*[\s]?[a-zA-Z]+[a-zA-Z0-9_]*"
           required
         />
       </div>
@@ -25,7 +25,7 @@
           type="email"
           name="email"
           id="newEmail"
-          pattern="[a-zA-Z0-9_\\\\-\.]+[@][a-z]+[\.][a-z]{2,3}"
+          pattern="[a-zA-Z0-9_\\\\\\-\.]+[@][a-z]+[\.][a-z]{2,3}"
           required
         />
       </div>
@@ -35,7 +35,7 @@
           type="password"
           name="password"
           id="newToken"
-          pattern="[a-zA-Z0-9_]*[0-9]*[_@#$%&,\\\\-\*\.]+[a-zA-Z0-9_@#$%&,\*\-\.]{5,}"
+          pattern="[a-zA-Z0-9_]*[0-9]*[_@#$%&,\\\\\\-\*\.]+[a-zA-Z0-9_@#$%&,\*\-\.]{5,}"
           title="password must be more than six(6) characters and must contain at least one of these characters _@#$%&*,-."
           required
         />
@@ -50,10 +50,5 @@
       </div>
     </div>
   </form>
-  {{#if err}}
-    <div class="error-div">
-      <i class="fas fa-times-circle icon"></i>
-      {{errormsg}}
-    </div>
-  {{/if}}
+ {{>background}}
 </div>

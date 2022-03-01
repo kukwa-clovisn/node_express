@@ -241,6 +241,93 @@
     transform: scale(15);
   }
 }
+.animation {
+  width: 100vw;
+  height: 100vh;
+  background: #171742;
+  position: fixed;
+  inset: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 0.8;
+}
+.animation .box {
+  width: 75vw;
+  height: 60vh;
+  background: transparent;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.animation .box::before {
+  content: "";
+  position: absolute;
+  top: -4px;
+  left: -4px;
+  right: -4px;
+  bottom: -4px;
+  transform: skewX(2deg) skewY(4deg);
+  filter: blur(5px);
+  background: linear-gradient(312deg, #35bce9, #171742, #f10bf1);
+}
+.animation .box::after {
+  content: "";
+  position: absolute;
+  top: -4px;
+  left: -4px;
+  right: -4px;
+  bottom: -4px;
+  transform: skewX(2deg) skewY(4deg);
+  background: linear-gradient(312deg, #35bce9, #171742, #f10bf1);
+  filter: blur(5px);
+}
+.animation .box .cover {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background: #171742;
+  border-radius: 10px 0 10px 0;
+  z-index: 1;
+  filter: blur(0.5px);
+}
+.animation .box .cover::before {
+  content: "CodingHerald";
+  width: 180px;
+  height: 50px;
+  border-radius: 5px;
+  position: fixed;
+  top: 100px;
+  display: flex;
+  justify-content: center;
+  color: white;
+  font: 700 21px "Poppins", sans-serif;
+  align-items: center;
+  left: 10px;
+  background-color: #37a3d1;
+  filter: blur(0.3px);
+  z-index: 1;
+}
+.animation .box .cover::after {
+  content: "GreatMinds";
+  width: 150px;
+  padding: auto 10px;
+  height: 50px;
+  position: fixed;
+  display: flex;
+  color: white;
+  text-transform: capitalize;
+  font: 700 21px "Poppins", sans-serif;
+  justify-content: center;
+  align-items: center;
+  bottom: 50px;
+  border-radius: 5px;
+  right: 10px;
+  background: #c403c4;
+  filter: blur(0.3px);
+}
+
 /* footer====================> */
 footer {
   width: 100%;

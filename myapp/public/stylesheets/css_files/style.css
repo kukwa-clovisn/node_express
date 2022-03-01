@@ -248,11 +248,16 @@ button:active {
 .landing_page .landing-body .container .logo {
   width: auto;
   height: 160px;
+  animation-duration: 2s;
+  animation-timing-function: ease-in-out;
+  animation-duration: 2s;
 }
 .landing_page .landing-body .container h1 {
   color: white;
   font: 600 35px "Poppins", sans-serif;
   text-align: center;
+  animation-duration: 3s;
+  animation-timing-function: ease-in-out;
 }
 .landing_page .landing-body .container p {
   text-align: center;
@@ -264,6 +269,8 @@ button:active {
   display: block;
   border-radius: 6px;
   background: #850173;
+  animation-duration: 2s;
+  animation-timing-function: ease-in-out;
 }
 .landing_page .landing-body .container button a {
   width: 100%;
@@ -636,6 +643,8 @@ button:active {
   width: 94vw;
   margin: 2vh auto;
   padding-top: 120px;
+  z-index: 0.8;
+  position: relative;
 }
 .blogs .blog {
   width: 90%;

@@ -10,14 +10,15 @@
   background: #ececec;
 }
 .log-in-form .form {
-  width: 600px;
+  width: 560px;
   height: 80vh;
   background: white;
   margin: auto;
   border-radius: 5px;
   position: relative;
-  background: #6da8bb;
+  background: #7abbd1;
   padding: 20px;
+  z-index: 1;
 }
 .log-in-form .form p {
   text-align: center;
