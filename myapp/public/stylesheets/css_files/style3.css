@@ -1,4 +1,8 @@
 /* styling in style3.css  log in form with mbird forms with success form */
+:root {
+  --col: rgb(79, 85, 93);
+}
+
 .log-in-form {
   width: 100vw;
   height: 100vh;
@@ -10,30 +14,33 @@
   background: #ececec;
 }
 .log-in-form .form {
-  width: 560px;
+  width: 530px;
   height: 80vh;
   background: white;
   margin: auto;
-  border-radius: 5px;
-  position: relative;
-  background: #7abbd1;
+  border-radius: 7px;
   padding: 20px;
+  position: relative;
   z-index: 1;
 }
 .log-in-form .form p {
   text-align: center;
-  font: 300 21px "Poppins", sans-serif;
+  font: 500 21px "Poppins", sans-serif;
   text-transform: capitalize;
-  color: white;
-  margin: -2px;
-  padding: 0;
+  color: var(--col);
+  padding: 10px;
 }
 .log-in-form .form h1 {
   text-align: center;
   font: 700 30px "Poppins", sans-serif;
-  padding: 10px;
+  padding: 0 10px;
+  margin: -20px;
+  margin-bottom: 0;
   text-transform: capitalize;
-  color: #b03098;
+  background: lightblue;
+  padding: 10px;
+  border-radius: 6px 6px 0 0;
+  color: #d106d1;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -46,19 +53,20 @@
 }
 .log-in-form .form h3 {
   text-align: center;
-  padding: 5px;
+  padding: 10px;
   text-transform: capitalize;
-  color: white;
-  font: 600 25px "Poppins", sans-serif;
+  color: #d608d6;
+  font: 800 25px "Poppins", sans-serif;
 }
 .log-in-form .form .content {
   width: 97%;
   height: 80%;
+  margin: 0 auto;
 }
 .log-in-form .form .content div {
   width: 100%;
   height: auto;
-  margin: auto;
+  margin: 0 auto;
   padding: 0;
   display: flex;
   justify-content: center;
@@ -66,20 +74,29 @@
   flex-direction: column;
 }
 .log-in-form .form .content div input {
-  width: 86%;
-  height: 65px;
+  width: 90%;
+  height: 60px;
   display: flex;
-  border: none;
-  border-radius: 30px;
-  background: #fbfbfb;
+  border: 0.5px solid #3b3b5d;
+  border-radius: 3px;
+  background: #d3dbe9;
+  background-color: transparent;
+  color: var(--col);
   padding: 5px;
   margin: 15px auto;
+  margin-bottom: 0;
   position: relative;
   text-align: center;
   outline: none;
   top: -10px;
   padding-left: 20px;
   font: 500 17px "Poppins", sans-serif;
+  transition: all 0.3s ease;
+}
+.log-in-form .form .content div input:hover {
+  border: none;
+  background: #e0eef5;
+  border-radius: 30px;
 }
 .log-in-form .form .content div button {
   width: 47%;
@@ -87,11 +104,11 @@
   height: 65px;
   border-radius: 3px;
   color: white;
-  background: #4c3b84;
+  background: #5e4a9f;
   font: 500 18px "Poppins", sans-serif;
 }
 .log-in-form .form .content div button:last-child {
-  background: #b03098;
+  background: #bb06bb;
 }
 .log-in-form .form .content div button:last-child a {
   font-size: 18px;
@@ -103,16 +120,22 @@
   width: 100%;
   height: fit-content;
   flex-direction: row;
+  margin: 0 auto;
 }
 .log-in-form .form .content .error-msg {
   text-align: center;
   text-transform: lowercase;
-  color: white;
-  font: 600 17px "Poppins", sans-serif;
+  color: var(--col);
+  margin: 1px auto;
+  font: 700 17px "Poppins", sans-serif;
 }
 .log-in-form .form .content .error-msg a {
   color: tomato;
   cursor: pointer;
+}
+.log-in-form footer {
+  color: var(--col);
+  padding: 5px;
 }
 .log-in-form .logo {
   width: auto;

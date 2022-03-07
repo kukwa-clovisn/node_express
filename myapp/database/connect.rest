@@ -1,0 +1,31 @@
+POST http://localhost:3000/users/login
+Content-Type: application/json
+
+{
+     "name": "user two",
+     "password": "this is rest user two"
+}
+
+###
+POST https://localhost:7000/url/shortener
+Content-Type: application/json
+
+{
+     "longUrl":"https://codesource.io/setting-up-vue-authentication-using-expressjs-mongodb-and-jwt/"
+}
+
+###
+POST http://localhost:8000/user/signup
+Content-Type: application/json
+
+{
+     "username": "user from the front end",
+     "email": "userone@gmail.com",
+     "password": "user on password",
+     "todos" : [
+          "go to school", "do some cleanup","behave","learn","associate with others"
+     ]
+}
+
+
+

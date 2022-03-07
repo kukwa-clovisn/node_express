@@ -12,6 +12,8 @@ let homeRouter = require("./routes/home");
 let usersRouter = require("./routes/users");
 let createError = require("http-errors");
 let errorRouter = require("./routes/error");
+const urlShortener = require("./url_shortener/url")
+
 
 let PORT = process.env.PORT;
 const mongo_uri = process.env.MONGO
@@ -55,6 +57,8 @@ app.use("/", homeRouter); //home route
 app.use("/user", userRouter); //login, signup,write,  update, delete route
 app.use("/error", errorRouter); //error msg route
 app.use("/users", usersRouter); //users, search route
+app.use("/url", urlShortener) //url shortener route
+
 
 
 // catch 404 and forward to error handler===================>
