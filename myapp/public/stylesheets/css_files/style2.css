@@ -1,30 +1,41 @@
 /* start styling from the log in user form*/
 :root {
   --colSize: 20px;
-  --btnHeight: 60px;
+  --col: rgb(79, 85, 93);
+  --btnHeight: 50px;
 }
 
 .user-form {
   width: 100vw;
-  height: 100%;
+  height: fit-content;
   display: flex;
   justify-content: center;
   align-items: center;
   background: linear-gradient(to bottom, #8ebaec, #5286ba);
   background-size: cover;
+  padding: 10px auto;
   position: relative;
   background-attachment: fixed;
 }
 .user-form .form {
-  width: 570px;
-  height: 550px;
+  width: 530px;
+  height: fit-content;
   background: white;
   border-radius: 5px;
   position: relative;
+  margin: 20px auto;
   z-index: 1;
+  padding: 5px 20px;
 }
-.user-form .form h1 {
-  text-align: center;
+.user-form .form .head {
+  width: 93%;
+  height: fit-content;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.user-form .form .head h1 {
   text-transform: capitalize;
   font: 20px 600 "Poppins", sans-serif;
   color: #690969;
@@ -32,53 +43,87 @@
   justify-content: center;
   align-items: center;
 }
-.user-form .form h1 span {
+.user-form .form .head h1 span {
   color: tomato;
   text-transform: capitalize;
   cursor: pointer;
   display: block;
 }
-.user-form .form h1 span:first-letter {
+.user-form .form .head h1 span:first-letter {
   font-size: 50px;
+}
+.user-form .form .head a {
+  color: tomato;
+  text-transform: capitalize;
+  font: 500 16px "Poppins", sans-serif;
+}
+.user-form .form span {
+  display: block;
+  margin: auto;
+  text-align: center;
+  font-weight: 500;
+  color: #383636;
+  text-transform: capitalize;
 }
 .user-form .form .content {
   width: 100%;
-  padding: 10px;
   padding-top: 0;
 }
-.user-form .form .content div {
-  width: 90%;
+.user-form .form .content .div {
+  width: 93%;
   margin: 10px auto;
-  height: 12%;
+  height: fit-content;
   display: flex;
   justify-content: space-evenly;
   align-items: center;
   flex-direction: column;
 }
-.user-form .form .content div label {
+.user-form .form .content .div label {
   display: flex;
+  width: 100%;
   align-items: center;
-  padding: 0 52px;
   text-transform: capitalize;
   font-weight: 500;
   position: relative;
-  top: 10px;
-  font: 13px "Poppins", sans-serif;
+  color: #4e4d4d;
+  font: 600 15px "Poppins", sans-serif;
 }
-.user-form .form .content div input {
-  border: none;
-  border-bottom: 3px solid #646363;
-  border-radius: 0;
-  display: block;
-  width: 80%;
-  height: 60%;
+.user-form .form .content .div input {
+  border: 1px solid #b5b2b2;
+  border-radius: 2px;
+  align-self: flex-end;
+  width: 98%;
+  height: 50px;
   outline: none;
+  padding-left: 20px;
+  font-family: "Poppins", sans-serif;
+}
+.user-form .form .content .div button {
+  align-self: flex-end;
+  width: 100%;
+  height: 50px;
   margin: 10px auto;
   font-family: "Poppins", sans-serif;
-  padding: 0 15px 2px 0;
+  font-size: 17px;
+  font-weight: 600;
+  color: white;
+  background: #1273fa;
+  border-radius: 2px;
+}
+.user-form .form .content .div hr {
+  width: 100%;
+  background: #c6c2c2;
+}
+.user-form .form .content .div p {
+  color: var(--col);
+}
+.user-form .form .content .div a {
+  color: #1273fa;
+  font-weight: 500;
 }
 .user-form .form .content .file-upload {
-  height: 8%;
+  height: fit-content;
+  margin: 5px auto;
 }
 .user-form .form .content .file-upload input {
   border: none;
@@ -87,28 +132,6 @@
 }
 .user-form .form .content .file-upload input button {
   background-color: tomato;
-}
-.user-form .form .content .btns {
-  width: 90%;
-  height: auto;
-  margin: 14px auto;
-}
-.user-form .form .content .btns button {
-  display: block;
-  width: 84%;
-  height: var(--btnHeight);
-  margin: 8px auto;
-  font-family: "Poppins", sans-serif;
-  font-size: var(--colSize);
-  font-weight: 700;
-  color: white;
-  background-color: #80b8e9;
-}
-.user-form .form .content .btns button a {
-  font-size: var(--colSize);
-}
-.user-form .form .content .btns button:last-child {
-  background: tomato;
 }
 @media screen and (max-width: 996px) {
   .user-form .form {

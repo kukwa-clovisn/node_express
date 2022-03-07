@@ -76,7 +76,6 @@ html {
 button {
   width: 300px;
   height: 47px;
-  z-index: 1;
   border: none;
   cursor: pointer;
   background: #d64501;
@@ -86,6 +85,8 @@ button {
   border-radius: 3px;
   text-transform: capitalize;
   transition: all 0.3s ease;
+  position: relative;
+  z-index: 1;
   text-transform: capitalize;
   color: white;
   font-family: "Poppins", sans-serif;
@@ -359,6 +360,7 @@ button:active {
 .main {
   padding: 0;
   background: transparent;
+  background: linear-gradient(to right, purple, goldenrod);
   position: relative;
   height: fit-content;
 }
@@ -366,7 +368,7 @@ button:active {
   width: 100vw;
   height: fit-content;
   margin: 0 auto;
-  background: linear-gradient(to bottom, #0f0f1f, #404053);
+  background: #f1f4f5;
 }
 .main .section .aside {
   width: 85%;
@@ -374,11 +376,11 @@ button:active {
   background: transparent;
   padding: 33px 10px;
   position: relative;
-  z-index: 1;
   margin: auto;
 }
 .main .section .aside h1 {
   background: linear-gradient(to bottom right, #b83704, #07a1c4);
+  background: linear-gradient(to right, purple, goldenrod);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -392,7 +394,7 @@ button:active {
 .main .section .aside p {
   font: 500 1.6rem "Poppins", sans-serif;
   text-align: center;
-  color: white;
+  color: #353333;
   width: 60%;
   margin: auto;
   padding: 10px;
@@ -402,7 +404,7 @@ button:active {
   height: 60px;
   border-radius: 5px;
   background: linear-gradient(to top right, #b83704, #07a1c4);
-  background: #495765;
+  background: #0355a7;
   margin: 20px auto;
   transition: all 0.3s ease;
 }
@@ -416,31 +418,54 @@ button:active {
 .main .main-content {
   width: 100vw;
   height: fit-content;
-  background: linear-gradient(to bottom, #404053, #84848c);
+  background: linear-gradient(to right, purple, #af8008);
   margin: 0;
   padding: 0;
   padding-top: 20px;
   padding-bottom: 60px;
+  position: relative;
 }
 .main .main-content .notice {
   width: 90%;
   height: fit-content;
   margin: 0 auto;
   border-radius: 5px;
-  background: transparent;
   display: flex;
   justify-content: space-evenly;
   align-items: center;
   flex-direction: row;
   position: relative;
   left: -110vw;
-  z-index: 0.8;
   transition: all 0.3s ease;
+}
+.main .main-content .notice .a,
+.main .main-content .notice .b,
+.main .main-content .notice .c {
+  position: fixed;
+  background: linear-gradient(312deg, teal, #c2e5fc);
+  width: 500px;
+  height: 500px;
+  top: 2vh;
+  background: linear-gradient(to right, purple, teal, goldenrod);
+  left: -10vw;
+  border-radius: 100%;
+  opacity: 0.1;
+}
+.main .main-content .notice .b {
+  left: 65vw;
+  top: 50vh;
+}
+.main .main-content .notice .c {
+  top: 5vh;
+  left: 60vw;
+  width: 130px;
+  height: 130px;
 }
 .main .main-content .notice .content {
   width: 30%;
   height: fit-content;
   padding: 20px 0;
+  position: relative;
 }
 .main .main-content .notice .content h3 {
   text-align: center;
@@ -473,6 +498,8 @@ button:active {
   margin: 20px auto;
   height: 60px;
   border-radius: 6px;
+  position: relative;
+  z-index: 1;
 }
 .main .main-content .notice button a {
   color: #820682;
@@ -481,7 +508,7 @@ button:active {
   font-family: "Poppins", sans-serif;
 }
 .main .main-content .notice button:hover {
-  background: #3f5062;
+  background: #015e7a;
 }
 .main .main-content .notice button:hover a {
   color: white;
@@ -529,12 +556,14 @@ button:active {
   }
 }
 .main .main-content .search {
-  width: 70%;
+  width: 50%;
   height: 120px;
   margin: 0 auto;
   position: relative;
   right: -110vw;
   transition: all 0.5s ease;
+  position: relative;
+  z-index: 1;
 }
 .main .main-content .search form {
   display: flex;
@@ -543,21 +572,39 @@ button:active {
   width: 100%;
   height: 100%;
 }
-.main .main-content .search form input {
-  width: 500px;
+.main .main-content .search form .span {
+  background: white;
+  width: 13%;
   height: 50px;
   border-radius: 30px 0 0 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.main .main-content .search form .span span {
+  background: linear-gradient(to right, purple, goldenrod);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font: 800 40px sans-serif;
+  text-transform: capitalize;
+}
+.main .main-content .search form input {
+  width: 60%;
+  height: 50px;
+  border-radius: 0;
   border: none;
   background: #dbdbdf;
   background-color: white;
-  padding-left: 20px;
+  padding: 3px 3px 3px 0;
   outline: none;
   position: relative;
 }
 .main .main-content .search form button {
-  width: 150px;
+  width: 23%;
   height: 50px;
   border: none;
+  padding: 3px 3px 3px 0;
   margin: 0;
   background: white;
   border-radius: 0 30px 30px 0;
@@ -918,7 +965,7 @@ button:active {
 #ceo {
   width: 100vw;
   height: fit-content;
-  background: linear-gradient(to bottom, #84848c 0%, #151529 40%);
+  background: linear-gradient(to bottom, #fafafc 0%, #dcdde0 40%);
   padding: 50px auto;
   position: relative;
   z-index: 1;
@@ -927,7 +974,7 @@ button:active {
 #ceo h1 {
   padding-top: 20px;
   text-align: center;
-  color: white;
+  color: teal;
   text-transform: uppercase;
   font: 900 45px "Poppins", sans-serif;
 }
@@ -953,7 +1000,7 @@ button:active {
   display: flex;
   justify-content: center;
   align-items: center;
-  color: goldenrod;
+  color: teal;
   font: 800 40px "Poppins", sans-serif;
   cursor: pointer;
 }
@@ -971,10 +1018,12 @@ button:active {
   height: fit-content;
   padding: 20px auto;
   margin-bottom: 40px;
+  position: relative;
+  z-index: 1;
 }
 #ceo .content .others .content {
   width: 300px;
-  height: 350px;
+  height: fit-content;
   background: white;
   padding: 10px;
   margin: 10px;

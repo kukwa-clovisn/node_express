@@ -1,36 +1,31 @@
 {{! styling in style3.css }}
 
 <div class="log-in-form">
-  <form action="/user/login/dashboard" method="post" class="form"> 
-  <h1>great <span>minds</span></h1>
-    <h3>log in </h3>
+  <form action="/user/login/dashboard" method="post" class="form">
+  <div class="head">
+     <h1>great <span>minds</span></h1> <a href="/">home</a>
+  </div>
+   
+    <h3>log in with Email </h3>
     <div class="content">
-      <div>
-        <input
-          type="text"
-          name="username"
-          id="log-in-user"
-          placeholder="Enter User Name...."
-          required
-        />
-        <input
-          type="password"
-          name="password"
-          id="log-in-token"
-          placeholder="Enter User Password...."
-          {{! pattern="[a-zA-Z0-9]*[A-Z]+[" }}
-          required
-        />
-      </div>
-      <p class="error-msg">{{errormsg}} {{msg}} <a href="/user/join">{{signup}}</a></p>
-      <div class="btns">
+      <div class="div">
+        <div class="data">
+          <label for="log-in-user">username:</label> <input type="text" name="username" id="log-in-user" placeholder="Enter User Name...." required />
+        </div>
+        <div class="data">
+          <label for="log-in-token">password:</label> <input type="password" name="password" id="log-in-token" placeholder="Enter User Password...." {{! pattern="[a-zA-Z0-9]*[A-Z]+[" }} required />
+        </div>
+         <p class="error-msg">{{errormsg}} {{msg}} <a href="/user/join">{{signup}}</a></p>
         <button type="submit">log in</button>
-        <button type="button"> <a href="/">home</a></button>
+        <p class="p">forgot password?</p>
+<hr>
+        <h5>Don't have an account?</h5>
+        <p class="p"><a href="/user/join">sign up</a>|<a href="/" class="home">home</a></p>
+
       </div>
-      {{>footer}}
     </div>
-    
+
   </form>
-{{> background}}
+  {{> background}}
   {{>canvas}}
 </div>

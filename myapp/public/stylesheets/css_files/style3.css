@@ -5,8 +5,9 @@
 
 .log-in-form {
   width: 100vw;
-  height: 100vh;
+  height: fit-content;
   margin: 0 auto;
+  padding-top: 30px;
   position: relative;
   display: flex;
   justify-content: space-evenly;
@@ -15,55 +16,61 @@
 }
 .log-in-form .form {
   width: 530px;
-  height: 80vh;
+  height: fit-content;
   background: white;
   margin: auto;
   border-radius: 7px;
-  padding: 20px;
+  padding: 0 20px 20px 20px;
   position: relative;
   z-index: 1;
 }
-.log-in-form .form p {
-  text-align: center;
-  font: 500 21px "Poppins", sans-serif;
-  text-transform: capitalize;
-  color: var(--col);
-  padding: 10px;
+.log-in-form .form .head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 90%;
+  height: fit-content;
+  margin: auto;
 }
-.log-in-form .form h1 {
-  text-align: center;
-  font: 700 30px "Poppins", sans-serif;
-  padding: 0 10px;
-  margin: -20px;
-  margin-bottom: 0;
-  text-transform: capitalize;
-  background: lightblue;
+.log-in-form .form .head h1 {
+  font: 700 22px "Poppins", sans-serif;
   padding: 10px;
+  text-transform: capitalize;
   border-radius: 6px 6px 0 0;
   color: #d106d1;
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
 }
-.log-in-form .form h1 span {
+.log-in-form .form .head h1 span {
   color: #512d73;
 }
-.log-in-form .form h1 span::first-letter {
-  font-size: 70px;
+.log-in-form .form .head h1 span::first-letter {
+  font-size: 44px;
+}
+.log-in-form .form .head a {
+  text-transform: capitalize;
+  color: #d106d1;
+  font-weight: 600;
 }
 .log-in-form .form h3 {
   text-align: center;
-  padding: 10px;
+  width: 50%;
+  padding: 5px;
+  cursor: pointer;
+  margin: auto;
+  border-radius: 30px;
   text-transform: capitalize;
-  color: #d608d6;
-  font: 800 25px "Poppins", sans-serif;
+  color: var(--col);
+  font: 600 13px "Poppins", sans-serif;
+  border: 1px solid #e2e2e2;
 }
 .log-in-form .form .content {
   width: 97%;
   height: 80%;
   margin: 0 auto;
 }
-.log-in-form .form .content div {
+.log-in-form .form .content .div {
   width: 100%;
   height: auto;
   margin: 0 auto;
@@ -73,65 +80,76 @@
   align-items: center;
   flex-direction: column;
 }
-.log-in-form .form .content div input {
-  width: 90%;
-  height: 60px;
-  display: flex;
-  border: 0.5px solid #3b3b5d;
-  border-radius: 3px;
-  background: #d3dbe9;
-  background-color: transparent;
-  color: var(--col);
+.log-in-form .form .content .div .data {
+  width: 98%;
+  height: fit-content;
+  margin: 2px auto;
+}
+.log-in-form .form .content .div .data label {
+  width: 100%;
   padding: 5px;
-  margin: 15px auto;
-  margin-bottom: 0;
+  text-align: left;
+  font: 600 19px "Poppins", sans-serif;
+  display: block;
+  text-transform: capitalize;
+  color: var(--col);
+}
+.log-in-form .form .content .div .data input {
+  width: 97%;
+  height: 50px;
+  border: 1px solid #dddcdc;
+  border-radius: 3px;
+  color: var(--col);
+  padding: 5px 20px;
   position: relative;
-  text-align: center;
+  float: right;
+  text-align: left;
   outline: none;
-  top: -10px;
-  padding-left: 20px;
-  font: 500 17px "Poppins", sans-serif;
+  font: 500 15px "Poppins", sans-serif;
   transition: all 0.3s ease;
 }
-.log-in-form .form .content div input:hover {
-  border: none;
-  background: #e0eef5;
-  border-radius: 30px;
-}
-.log-in-form .form .content div button {
-  width: 47%;
+.log-in-form .form .content .div button {
+  width: 98%;
   display: block;
-  height: 65px;
-  border-radius: 3px;
+  height: 50px;
+  margin: 5px auto;
+  border-radius: 5px;
   color: white;
-  background: #5e4a9f;
+  background: #1273fa;
   font: 500 18px "Poppins", sans-serif;
-}
-.log-in-form .form .content div button:last-child {
-  background: #bb06bb;
-}
-.log-in-form .form .content div button:last-child a {
-  font-size: 18px;
-}
-.log-in-form .form .content div.btns {
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
-  width: 100%;
-  height: fit-content;
-  flex-direction: row;
-  margin: 0 auto;
 }
 .log-in-form .form .content .error-msg {
   text-align: center;
   text-transform: lowercase;
   color: var(--col);
-  margin: 1px auto;
+  margin: 10px auto;
   font: 700 17px "Poppins", sans-serif;
 }
 .log-in-form .form .content .error-msg a {
   color: tomato;
   cursor: pointer;
+}
+.log-in-form .form .content .p {
+  color: #0c5af6;
+  text-transform: capitalize;
+  font-weight: 550;
+}
+.log-in-form .form .content .p a {
+  color: #0c5af6;
+  text-transform: capitalize;
+  padding: 5px;
+  font-weight: 500;
+}
+.log-in-form .form .content .p .home {
+  color: #d106d1;
+}
+.log-in-form .form .content hr {
+  width: 100%;
+}
+.log-in-form .form .content h5 {
+  color: var(--col);
+  padding: 5px;
+  font-weight: 500;
 }
 .log-in-form footer {
   color: var(--col);

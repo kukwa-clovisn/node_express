@@ -14,7 +14,7 @@ router.post("/shortener", async (req, res) => {
      } = req.body;
      const baseUrl = "https://localhost:7000/url";
 
-     //check if the baseUrl exist or not
+     //check if the baseUrl exist or not=
      if (!validUrl.isUri(baseUrl)) {
           return res.status(401).json('invalid base url...');
      }
@@ -76,7 +76,6 @@ router.get('/:url', async (req, res) => {
           console.error(err)
           res.status(500).json('server code error');
      }
-
 })
 
 module.exports = router;
