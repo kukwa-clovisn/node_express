@@ -9,11 +9,14 @@ const messaegbird = require("messagebird")("xd1lpIuDDkVmXkOhEAu6eBtqd");
 require("dotenv").config();
 const tokenCheck = require("../middlewares/auth/tokenCheck");
 const userAuth = require("../middlewares/auth/userAuth");
+const authorize = require("../middlewares/auth/authorize")
 const {
      check,
      validationResult
 } = require('express-validator')
+const jwt = require('jsonwebtoken');
 
+jwt_access_token = process.env.jwt_access_token
 
 // setting up the multer =====================================================>
 const storage = multer.diskStorage({
@@ -241,7 +244,11 @@ router.get("/dashboard", (req, res) => {
 router.get("/login", (req, res) => {
      res.render("login");
 });
-router.route("/login/dashboard").get(userAuth, (req, res) => {
+router.route("/login/dashboard").get(userAuth, authorize, (req, res) => {
+
+     console.log(req.user)
+
+
      res.render("dashboard")
 }).post([
      check('username').not().isEmpty().withMessage('username can not be empty or only numbers').trim().escape(),
@@ -273,7 +280,7 @@ router.route("/login/dashboard").get(userAuth, (req, res) => {
           firstName = nameArr[0].charAt(0).toUpperCase() + nameArr[0].slice(1);
 
      }
-     console.log(searchName)
+     // console.log(searchName)
      searchName = searchName.slice(0, -1);
      userModel.findOne({
                "username": searchName,
@@ -302,9 +309,27 @@ router.route("/login/dashboard").get(userAuth, (req, res) => {
 
                          if (result === true) {
                               req.session.isAuth = true;
+                              let {
+                                   username
+                              } = req.body;
+                              let user = {
+                                   username
+                              }
+                              /**
+                               * creating the json web token 
+                               */
+
+                              let authToken = jwt.sign(user, jwt_access_token)
+                              // res.json({
+                              //      authToken,
+                              //      msg: "secure your authToken and don't share cause it contains your data"
+                              // })
+                              console.log(authToken)
+
+                              authorize();
 
 
-
+                              // res.redirect('/user/login/dashboard')
                               res.status(200).render("dashboard", {
                                    idName: data.username,
                                    idEmail: data.email,
@@ -339,5 +364,4 @@ router.route("/login/dashboard").get(userAuth, (req, res) => {
           }
      );
 });
-// router.put("/")
 module.exports = router;
