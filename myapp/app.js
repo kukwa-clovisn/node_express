@@ -14,10 +14,6 @@ let createError = require("http-errors");
 let errorRouter = require("./routes/error");
 const urlShortener = require("./url_shortener/url")
 
-
-
-let PORT = process.env.PORT;
-const mongo_uri = process.env.MONGO
 // creating an instance of the express app==========================>
 const app = express();
 require("dotenv").config();
@@ -33,6 +29,10 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, "public")));
 app.use(express.static(path.join(__dirname, "uploads")));
 
+let PORT = process.env.PORT;
+const mongo_uri = process.env.MONGO
+
+console.log(PORT, mongo_uri);
 
 // view engine setup==============================================>
 app.set("views", path.join(__dirname, "views/main"));

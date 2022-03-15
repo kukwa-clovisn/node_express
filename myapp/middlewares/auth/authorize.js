@@ -1,8 +1,8 @@
-require("dotenv").config()
-
 const authorize = (req, res, next) => {
+
      const authHeader = req.headers['authorization'];
-     // slip the Bearer and token into and array and getting only the token 
+
+     // split the Bearer and token into and array and getting only the token 
      const token = authHeader && authHeader.split(" ")[1];
 
      // if no token 
@@ -10,9 +10,12 @@ const authorize = (req, res, next) => {
 
      // if token exist
      jwt.verify(token, jwt_access_token, (err, authData) => {
+
           // if token is invalid or expired
-          if (err) return res.status(403)
+          if (err) return res.status(403);
+
           req.user = authData;
+
           console.log(req.user, "from authoirze")
 
           next();

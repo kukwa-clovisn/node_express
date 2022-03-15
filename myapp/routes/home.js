@@ -1,9 +1,9 @@
-const express = require('express')
-const router = express.Router()
+const express = require('express');
+const router = express.Router();
 const session = require('express-session');
-const mongodbConnect = require('connect-mongodb-session')(session)
-const mongoose = require('mongoose')
-require("dotenv").config()
+const mongodbConnect = require('connect-mongodb-session')(session);
+const mongoose = require('mongoose');
+require("dotenv").config();
 
 const mongo_uri = process.env.MONGO
 
@@ -13,9 +13,9 @@ mongoose.connect(mongo_uri, {
      useUnifiedTopology: true
 }).then(res => console.log("mongodb connected....."))
 
-
+console.log(mongo_uri);
 const store = new mongodbConnect({
-     uri: "mongodb://localhost:27017/blogdb",
+     uri: mongo_uri,
      collection: "sessions"
 })
 
