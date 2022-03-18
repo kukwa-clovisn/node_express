@@ -1,6 +1,10 @@
 /* styling in style3.css  log in form with mbird forms with success form */
 :root {
+  --colSize: 20px;
   --col: rgb(79, 85, 93);
+  --btnHeight: 50px;
+  --secondary-col: rgb(4, 175, 218);
+  --tertiary-col: rgb(192, 4, 192);
 }
 
 .log-in-form {
@@ -19,8 +23,8 @@
   height: fit-content;
   background: white;
   margin: auto;
-  border-radius: 7px;
-  padding: 0 20px 20px 20px;
+  border-radius: 5px;
+  padding: 20px;
   position: relative;
   z-index: 1;
 }
@@ -28,7 +32,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 90%;
+  width: 95%;
   height: fit-content;
   margin: auto;
 }
@@ -37,7 +41,7 @@
   padding: 10px;
   text-transform: capitalize;
   border-radius: 6px 6px 0 0;
-  color: #d106d1;
+  color: var(--tertiary-col);
   display: flex;
   justify-content: flex-start;
   align-items: center;
@@ -50,7 +54,7 @@
 }
 .log-in-form .form .head a {
   text-transform: capitalize;
-  color: #d106d1;
+  color: var(--tertiary-col);
   font-weight: 600;
 }
 .log-in-form .form h3 {
@@ -66,7 +70,7 @@
   border: 1px solid #e2e2e2;
 }
 .log-in-form .form .content {
-  width: 97%;
+  width: 95%;
   height: 80%;
   margin: 0 auto;
 }
@@ -87,15 +91,14 @@
 }
 .log-in-form .form .content .div .data label {
   width: 100%;
-  padding: 5px;
-  text-align: left;
+  padding: 4px 0;
   font: 600 19px "Poppins", sans-serif;
   display: block;
   text-transform: capitalize;
   color: var(--col);
 }
 .log-in-form .form .content .div .data input {
-  width: 97%;
+  width: 100%;
   height: 50px;
   border: 1px solid #dddcdc;
   border-radius: 3px;
@@ -115,7 +118,7 @@
   margin: 5px auto;
   border-radius: 5px;
   color: white;
-  background: #1273fa;
+  background: var(--tertiary-col);
   font: 500 18px "Poppins", sans-serif;
 }
 .log-in-form .form .content .error-msg {
@@ -130,18 +133,18 @@
   cursor: pointer;
 }
 .log-in-form .form .content .p {
-  color: #0c5af6;
+  color: var(--secondary-col);
   text-transform: capitalize;
   font-weight: 550;
 }
 .log-in-form .form .content .p a {
-  color: #0c5af6;
+  color: var(--secondary-col);
   text-transform: capitalize;
   padding: 5px;
   font-weight: 500;
 }
 .log-in-form .form .content .p .home {
-  color: #d106d1;
+  color: var(--tertiary-col);
 }
 .log-in-form .form .content hr {
   width: 100%;

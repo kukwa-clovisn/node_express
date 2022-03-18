@@ -13,7 +13,6 @@ mongoose.connect(mongo_uri, {
      useUnifiedTopology: true
 }).then(res => console.log("mongodb connected....."))
 
-console.log(mongo_uri);
 const store = new mongodbConnect({
      uri: mongo_uri,
      collection: "sessions"
