@@ -1,12 +1,20 @@
+const jwt = require('jsonwebtoken')
+
 const authorize = (req, res, next) => {
 
-     const authHeader = req.headers['authorization'];
-
-     // split the Bearer and token into and array and getting only the token 
+     const authHeader = req.headers["authorization"];
+     console.log(authHeader)
+     // split the Bearer and token into and array and getting only the token
      const token = authHeader && authHeader.split(" ")[1];
 
+     // const token = req.cookies['token'];
+
      // if no token 
-     if (token == null) return res.status(401)
+     if (token == null) {
+          console.log('token is empty');
+          res.redirect('/user/login')
+          return res.status(401)
+     };
 
      // if token exist
      jwt.verify(token, jwt_access_token, (err, authData) => {
@@ -16,7 +24,7 @@ const authorize = (req, res, next) => {
 
           req.user = authData;
 
-          console.log(req.user, "from authoirze")
+          // console.log(authData)
 
           next();
      })

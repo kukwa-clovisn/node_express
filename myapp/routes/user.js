@@ -9,7 +9,7 @@ const messaegbird = require("messagebird")("xd1lpIuDDkVmXkOhEAu6eBtqd");
 require("dotenv").config();
 const tokenCheck = require("../middlewares/auth/tokenCheck");
 const userAuth = require("../middlewares/auth/userAuth");
-const authorize = require("../middlewares/auth/authorize");
+// const authorize = require("../middlewares/auth/authorize");
 const {
      check,
      validationResult
@@ -254,20 +254,14 @@ router.post("/join/tel/code", (req, res) => {
      });
 });
 
-router.get("/dashboard", (req, res) => {
-     res.render("dashboard");
-});
-
 // login authentication api and middleware===============================>
 router.get("/login", (req, res) => {
      res.render("login");
 });
 router
      .route("/login/dashboard")
-     .get(userAuth, authorize, (req, res) => {
-          console.log(req.user);
-
-          res.render("dashboard");
+     .get(userAuth, (req, res) => {
+          return res.render("dashboard");
      })
      .post(
           [
@@ -339,12 +333,19 @@ router
 
                                    if (result === true) {
                                         req.session.isAuth = true;
-                                        let {
-                                             username
-                                        } = req.body;
+                                        // let {
+                                        //      username
+                                        // } = req.body;
+                                        // let user = {
+                                        //      username,
+                                        // };
+
                                         let user = {
-                                             username,
-                                        };
+                                             "username": data.username,
+                                             "email": data.email,
+                                             "userImage": data.userImage,
+                                             "profileImage": data.profileImg
+                                        }
                                         /**
                                          * creating the json web token
                                          */
@@ -356,15 +357,18 @@ router
                                         // })
                                         console.log(authToken);
 
-                                        authorize();
+                                        res.cookie("token", authToken, {
+                                             httpOnly: true,
+                                             maxAge: 2 * 60 * 1000,
+                                        });
 
-                                        // res.redirect('/user/login/dashboard')
                                         res.status(200).render("dashboard", {
                                              idName: data.username,
                                              idEmail: data.email,
                                              idImage: data.profileImg,
                                              firstName: firstName,
                                         });
+
 
                                         return console.log(
                                              `user "${req.body.username}" successfully logged in....`

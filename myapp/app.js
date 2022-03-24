@@ -47,6 +47,7 @@ hbs.registerPartials(partialsDir);
 // }).then(res => console.log('mongo server connected successfully')).catch(err => console.log(err));
 app.use(
   cors({
+    credentials: true,
     origin: "*",
   })
 );

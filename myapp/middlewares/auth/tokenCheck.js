@@ -10,7 +10,7 @@ const tokenCheck = async (token, hash, nameCheck) => {
 
      if (result === true) {
 
-          console.log('login successful..')
+          console.log('TOKENCKECK: token verified')
 
           return true;
 

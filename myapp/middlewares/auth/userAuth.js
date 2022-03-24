@@ -4,7 +4,6 @@
 const userAuth = (req, res, next) => {
      //if log in is successful....
      if (req.session.isAuth) {
-
           next()
      }
      //else redirect to the log in route 
