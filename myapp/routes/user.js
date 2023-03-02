@@ -341,11 +341,11 @@ router
                                         // };
 
                                         let user = {
-                                             "username": data.username,
-                                             "email": data.email,
-                                             "userImage": data.userImage,
-                                             "profileImage": data.profileImg
-                                        }
+                                             username: data.username,
+                                             email: data.email,
+                                             userImage: data.userImage,
+                                             profileImage: data.profileImg,
+                                        };
                                         /**
                                          * creating the json web token
                                          */
@@ -368,7 +368,6 @@ router
                                              idImage: data.profileImg,
                                              firstName: firstName,
                                         });
-
 
                                         return console.log(
                                              `user "${req.body.username}" successfully logged in....`
