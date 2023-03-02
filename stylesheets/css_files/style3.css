@@ -1,0 +1,356 @@
+/* styling in style3.css  log in form with mbird forms with success form */
+:root {
+  --colSize: 20px;
+  --col: rgb(79, 85, 93);
+  --btnHeight: 50px;
+  --secondary-col: rgb(4, 175, 218);
+  --tertiary-col: rgb(192, 4, 192);
+}
+
+.log-in-form {
+  width: 100vw;
+  height: fit-content;
+  margin: 0 auto;
+  padding-top: 30px;
+  position: relative;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  background: #ececec;
+}
+.log-in-form .form {
+  width: 530px;
+  height: fit-content;
+  background: white;
+  margin: auto;
+  border-radius: 5px;
+  padding: 20px;
+  position: relative;
+  z-index: 1;
+}
+.log-in-form .form .head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 95%;
+  height: fit-content;
+  margin: auto;
+}
+.log-in-form .form .head h1 {
+  font: 700 22px "Poppins", sans-serif;
+  padding: 10px;
+  text-transform: capitalize;
+  border-radius: 6px 6px 0 0;
+  color: var(--tertiary-col);
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.log-in-form .form .head h1 span {
+  color: #512d73;
+}
+.log-in-form .form .head h1 span::first-letter {
+  font-size: 44px;
+}
+.log-in-form .form .head a {
+  text-transform: capitalize;
+  color: var(--tertiary-col);
+  font-weight: 600;
+}
+.log-in-form .form h3 {
+  text-align: center;
+  width: 50%;
+  padding: 5px;
+  cursor: pointer;
+  margin: auto;
+  border-radius: 30px;
+  text-transform: capitalize;
+  color: var(--col);
+  font: 600 13px "Poppins", sans-serif;
+  border: 1px solid #e2e2e2;
+}
+.log-in-form .form .content {
+  width: 95%;
+  height: 80%;
+  margin: 0 auto;
+}
+.log-in-form .form .content .div {
+  width: 100%;
+  height: auto;
+  margin: 0 auto;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.log-in-form .form .content .div .data {
+  width: 98%;
+  height: fit-content;
+  margin: 2px auto;
+}
+.log-in-form .form .content .div .data label {
+  width: 100%;
+  padding: 4px 0;
+  font: 600 19px "Poppins", sans-serif;
+  display: block;
+  text-transform: capitalize;
+  color: var(--col);
+}
+.log-in-form .form .content .div .data input {
+  width: 91%;
+  height: 50px;
+  border: 1px solid #dddcdc;
+  border-radius: 3px;
+  color: var(--col);
+  padding: 5px 20px;
+  outline: none;
+  font: 500 15px "Poppins", sans-serif;
+  transition: all 0.3s ease;
+}
+.log-in-form .form .content .div button {
+  width: 98%;
+  display: block;
+  height: 50px;
+  margin: 5px auto;
+  border-radius: 5px;
+  color: white;
+  background: var(--tertiary-col);
+  font: 500 18px "Poppins", sans-serif;
+}
+.log-in-form .form .content .error-msg {
+  text-align: center;
+  text-transform: lowercase;
+  color: var(--col);
+  margin: 10px auto;
+  font: 700 17px "Poppins", sans-serif;
+}
+.log-in-form .form .content .error-msg a {
+  color: tomato;
+  cursor: pointer;
+}
+.log-in-form .form .content .p {
+  color: var(--secondary-col);
+  text-transform: capitalize;
+  font-weight: 550;
+}
+.log-in-form .form .content .p a {
+  color: var(--secondary-col);
+  text-transform: capitalize;
+  padding: 5px;
+  font-weight: 500;
+}
+.log-in-form .form .content .p .home {
+  color: var(--tertiary-col);
+}
+.log-in-form .form .content hr {
+  width: 100%;
+}
+.log-in-form .form .content h5 {
+  color: var(--col);
+  padding: 5px;
+  font-weight: 500;
+}
+.log-in-form footer {
+  color: var(--col);
+  padding: 5px;
+}
+.log-in-form .logo {
+  width: auto;
+  height: 400px;
+  position: relative;
+}
+.log-in-form .logo #siteLogo {
+  height: 230px;
+}
+.log-in-form .logo .error-div {
+  width: 400px;
+  height: auto;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  top: 20px;
+  text-align: center;
+  left: 30px;
+  border-radius: 5px;
+  background: #a00202;
+  color: white;
+  font: 700 24px cursive, sans-serif;
+  text-align: center;
+  padding: 20px;
+  margin: 10px auto;
+}
+.log-in-form .logo .error-div .icon {
+  font-size: 120px;
+}
+
+/* mbird===========================> */
+.mbird {
+  width: 90vw;
+  height: 90vh;
+  margin: 5vh auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.mbird .logo {
+  width: auto;
+  height: 200px;
+}
+.mbird form {
+  width: 70%;
+  max-height: 90vh;
+  border-radius: 5px;
+  background: white;
+  padding: 10px;
+  background: white;
+}
+.mbird form .icon {
+  width: 100%;
+  height: 25%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.mbird form h2 {
+  width: 90%;
+  border-radius: 5px;
+  margin: 0 auto;
+  white-space: pre-wrap;
+  word-break: break-all;
+  text-transform: capitalize;
+  text-align: center;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-direction: column;
+  color: #fff;
+  padding: 10px;
+  font: 700 28px "Poppins", sans-serif;
+  background: #2c624e;
+}
+.mbird form h2 span {
+  text-transform: capitalize;
+  font: 700 32px "Poppins", sans-serif;
+}
+.mbird form p {
+  width: 70%;
+  text-align: center;
+  margin: 10px auto;
+  padding: 12px 0;
+  font: 500 19px "Poppins", sans-serif;
+  color: #616060;
+}
+.mbird form .content {
+  width: 75%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.mbird form .content input {
+  width: 70%;
+  height: 50px;
+  border-radius: 5px 0 0 5px;
+  border: none;
+  outline: none;
+  background: #faecec;
+  padding: 3px 3px 4px 30px;
+}
+.mbird form .content button {
+  border-radius: 0 5px 5px 0;
+  width: 30%;
+  height: 50px;
+  background: #047547;
+  background: #2c624e;
+  color: white;
+  font: 500 23px "Poppins", sans-serif;
+}
+.mbird form .home {
+  height: 50px;
+}
+@media screen and (max-width: 1000px) {
+  .mbird form {
+    width: 95%;
+    height: 1200px;
+    margin-top: 100px;
+  }
+  .mbird form h2 {
+    height: 250px;
+  }
+  .mbird form p {
+    font-size: 30px;
+  }
+  .mbird form .content {
+    width: 85%;
+    height: 200px;
+  }
+  .mbird form .content input {
+    height: 130px;
+    font-size: 40px;
+  }
+  .mbird form .content button {
+    height: 130px;
+  }
+  .mbird form .home {
+    height: 100px;
+    width: 500px;
+  }
+}
+
+/* success============================================> */
+.success {
+  width: 80vw;
+  height: 80vh;
+  margin: 5vh auto;
+  background: #fdf7f7;
+  border-radius: 5px;
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.success .content {
+  width: 200px;
+  background: radial-gradient(white 0%, #039130 100%);
+  height: 200px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.success .content .icon {
+  font-size: 100px;
+  color: #039047;
+}
+.success p {
+  width: 90%;
+  margin: 0 auto;
+  text-align: center;
+  font-size: 40px;
+  color: #037d48;
+  font: 700 40px "Poppins", sans-serif;
+}
+.success p .up {
+  font-size: 0.7em;
+  margin: 0 10px;
+}
+.success .btns {
+  width: 65%;
+  margin: 10px auto;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.success .btns button {
+  height: 60px;
+  width: 180px;
+  border-radius: 5px;
+}
+
+/*# sourceMappingURL=style3.css.map */

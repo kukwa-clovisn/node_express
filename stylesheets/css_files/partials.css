@@ -1,0 +1,345 @@
+#blur {
+  width: 100vw;
+  height: 100vh;
+  background: #d9d9fc;
+  opacity: 0.7;
+  z-index: 0.1;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+/* logo==============> */
+#siteLogo {
+  width: 90%;
+  height: 90%;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+#siteLogo img {
+  width: auto;
+  height: 100%;
+  border-radius: 5px;
+}
+@media screen and (max-width: 900px) {
+  #siteLogo {
+    height: 100%;
+    width: auto;
+    border-radius: 10px;
+  }
+}
+
+/* header==========================> */
+#header {
+  width: 100vw;
+  height: 100px;
+  display: flex;
+  position: fixed;
+  top: 0;
+  z-index: 1;
+  left: 0;
+  justify-content: space-evenly;
+  align-items: center;
+  background-color: white;
+  border-bottom: 1px solid #f2f2f5;
+}
+#header .menu {
+  width: 20%;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+  display: none;
+}
+#header .menu .icon {
+  color: #3a353a;
+  font-size: 35px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+@media screen and (max-width: 900px) {
+  #header .menu {
+    display: flex;
+    position: relative;
+    height: 10vh;
+  }
+  #header .menu .icon {
+    font-size: 90px;
+    left: 200px;
+  }
+  #header .menu .icon:hover {
+    transform: rotateZ(-90deg);
+  }
+  #header .menu .icon:active {
+    transform: scale(0.8);
+  }
+  #header .menu .menu-list {
+    width: 85vw;
+    height: 1000px;
+    position: absolute;
+    top: 10vh;
+    left: 0;
+    display: none;
+    z-index: 1;
+    background: white;
+    border-radius: 0 0 10px 0;
+    padding: 10px;
+    padding-bottom: 50px;
+    border: 2px solid #ebe7e7;
+  }
+  #header .menu .menu-list .lists {
+    width: 90%;
+    height: 95%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: column;
+  }
+  #header .menu .menu-list .lists li {
+    list-style: none;
+    display: block;
+    width: 100%;
+    height: 150px;
+    background: #020254;
+    border-radius: 10px;
+  }
+  #header .menu .menu-list .lists li a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    color: white;
+    text-transform: capitalize;
+    font: 600 38px "Poppins", sans-serif;
+  }
+  #header .menu:hover .menu-list {
+    display: block;
+  }
+}
+#header .logo {
+  width: auto;
+  height: 90%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+@media screen and (max-width: 900px) {
+  #header .logo {
+    width: 80%;
+  }
+}
+#header .navs {
+  width: 50%;
+  height: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+@media screen and (max-width: 900px) {
+  #header .navs {
+    display: none;
+  }
+}
+#header nav {
+  width: 25%;
+  height: 100%;
+  font-size: 150%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-transform: capitalize;
+}
+#header nav a {
+  text-decoration: none;
+  color: #292626;
+  color: #791079;
+  font-weight: 600;
+  font-size: 17px;
+  font-family: "Poppins", sans-serif;
+  transition: all 0.3s ease;
+}
+#header nav a:hover {
+  color: crimson;
+}
+#header nav a:active {
+  color: teal;
+}
+@media screen and (max-width: 900px) {
+  #header {
+    height: 200px;
+  }
+}
+
+/* canvas=================> */
+.c1,
+.c2,
+.c3 {
+  width: 3px;
+  height: 3px;
+  border-radius: 50%;
+  animation: c1 15s infinite linear alternate forwards;
+  position: fixed;
+  animation-timing-function: ease;
+  top: 200px;
+  transition: all 0.3s ease-in-out;
+  right: 160px;
+  opacity: 0.5;
+  z-index: 0.4;
+  background: #e28b07;
+}
+
+.c2 {
+  right: 1200px;
+  top: 500px;
+  animation: c2 5s infinite linear alternate forwards;
+  background: #960872;
+}
+
+.c3 {
+  animation: c3 5s infinite linear alternate forwards;
+  right: 1100px;
+  top: 150px;
+  background: teal;
+}
+
+@keyframes c1 {
+  30% {
+    border-radius: 3px;
+    top: 300px;
+  }
+  50% {
+    right: 1000px;
+    transform: scale3d(7);
+    top: 500px;
+  }
+  90% {
+    transform: scale(10);
+    right: 700px;
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+    right: 0;
+    top: 0;
+  }
+}
+@keyframes c2 {
+  to {
+    top: 150px;
+    transform: scale(10);
+    border-radius: 100% 100% 100% 0%;
+  }
+}
+@keyframes c3 {
+  to {
+    top: 500px;
+    border-radius: 0% 100% 100% 100%;
+    transform: scale(15);
+  }
+}
+.animation {
+  width: 100vw;
+  height: 100vh;
+  background: #171742;
+  position: fixed;
+  inset: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 0.8;
+}
+.animation .box {
+  width: 75vw;
+  height: 60vh;
+  background: transparent;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.animation .box::before {
+  content: "";
+  position: absolute;
+  top: -4px;
+  left: -4px;
+  right: -4px;
+  bottom: -4px;
+  transform: skewX(2deg) skewY(4deg);
+  filter: blur(5px);
+  background: linear-gradient(312deg, #35bce9, #171742, #f10bf1);
+}
+.animation .box::after {
+  content: "";
+  position: absolute;
+  top: -4px;
+  left: -4px;
+  right: -4px;
+  bottom: -4px;
+  transform: skewX(2deg) skewY(4deg);
+  background: linear-gradient(312deg, #35bce9, #171742, #f10bf1);
+  filter: blur(5px);
+}
+.animation .box .cover {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background: #171742;
+  border-radius: 10px 0 10px 0;
+  z-index: 1;
+  filter: blur(0.5px);
+}
+.animation .box .cover::before {
+  content: "CodingHerald";
+  width: 180px;
+  height: 50px;
+  border-radius: 5px;
+  position: fixed;
+  top: 100px;
+  display: flex;
+  justify-content: center;
+  color: white;
+  font: 700 21px "Poppins", sans-serif;
+  align-items: center;
+  left: 10px;
+  background-color: #37a3d1;
+  filter: blur(0.3px);
+  z-index: 1;
+}
+.animation .box .cover::after {
+  content: "GreatMinds";
+  width: 150px;
+  padding: auto 10px;
+  height: 50px;
+  position: fixed;
+  display: flex;
+  color: white;
+  text-transform: capitalize;
+  font: 700 21px "Poppins", sans-serif;
+  justify-content: center;
+  align-items: center;
+  bottom: 50px;
+  border-radius: 5px;
+  right: 10px;
+  background: #c403c4;
+  filter: blur(0.3px);
+}
+
+/* footer====================> */
+footer {
+  width: 100%;
+  height: auto;
+  font-size: 11px;
+  text-align: center;
+  color: #d6d6d6;
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+/*# sourceMappingURL=partials.css.map */

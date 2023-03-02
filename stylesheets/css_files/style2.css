@@ -1,0 +1,243 @@
+/* start styling from the log in user form*/
+:root {
+  --colSize: 20px;
+  --col: rgb(79, 85, 93);
+  --btnHeight: 50px;
+  --secondary-col: rgb(6, 190, 236);
+  --tertiary-col: rgb(192, 4, 192);
+}
+
+.user-form {
+  width: 100vw;
+  height: fit-content;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(to bottom, #8ebaec, #5286ba);
+  background-size: cover;
+  padding: 10px 0;
+  position: relative;
+  background-attachment: fixed;
+}
+.user-form .form {
+  width: 530px;
+  height: fit-content;
+  background: white;
+  border-radius: 5px;
+  position: relative;
+  margin: 20px auto;
+  z-index: 1;
+  padding: 20px;
+}
+.user-form .form .head {
+  width: 95%;
+  height: fit-content;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.user-form .form .head h1 {
+  text-transform: capitalize;
+  font: 600 20px "Poppins", sans-serif;
+  color: #690969;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.user-form .form .head h1 span {
+  color: tomato;
+  text-transform: capitalize;
+  cursor: pointer;
+  display: block;
+}
+.user-form .form .head h1 span:first-letter {
+  font-size: 50px;
+}
+.user-form .form .head a {
+  color: var(--tertiary-col);
+  text-transform: capitalize;
+  font: 600 16px "Poppins", sans-serif;
+}
+.user-form .form span {
+  display: block;
+  margin: auto;
+  text-align: center;
+  font-weight: 500;
+  color: var(--secondary-col);
+  text-transform: capitalize;
+}
+.user-form .form .content {
+  width: 100%;
+  padding-top: 0;
+}
+.user-form .form .content .div {
+  width: 95%;
+  margin: auto;
+  padding: 10px;
+  height: fit-content;
+}
+.user-form .form .content .div label {
+  display: block;
+  padding: 3px 0;
+  text-transform: capitalize;
+  position: relative;
+  color: #747272;
+  font: 600 19px "Poppins", sans-serif;
+}
+.user-form .form .content .div input {
+  display: block;
+  border: 1px solid #e6e3e3;
+  border-radius: 3px;
+  width: 100%;
+  height: 45px;
+  outline: none;
+  padding-left: 20px;
+  font: 500 16px "Poppins", sans-serif;
+}
+.user-form .form .content .div button {
+  width: 100%;
+  height: 50px;
+  margin: 10px auto;
+  font: 600 17px "Poppins", sans-serif;
+  color: white;
+  background: var(--tertiary-col);
+  border-radius: 3px;
+}
+.user-form .form .content .div p {
+  text-align: center;
+  color: var(--col);
+}
+.user-form .form .content .div p a {
+  color: var(--secondary-col);
+  font-weight: 500;
+}
+.user-form .form .content .file-upload {
+  height: fit-content;
+  margin: 5px auto;
+}
+.user-form .form .content .file-upload input {
+  border: none;
+  height: 90%;
+  text-align: center;
+}
+.user-form .form .content .file-upload input button {
+  background-color: tomato;
+}
+.user-form .animation {
+  width: 100vw;
+  height: 100vh;
+  background: #171742;
+  position: fixed;
+  inset: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 0.8;
+}
+.user-form .animation .box {
+  width: 75vw;
+  height: 60vh;
+  background: transparent;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.user-form .animation .box::before {
+  content: "";
+  position: absolute;
+  top: -4px;
+  left: -4px;
+  right: -4px;
+  bottom: -4px;
+  transform: skewX(2deg) skewY(4deg);
+  filter: blur(5px);
+  background: linear-gradient(312deg, #35bce9, #171742, #f10bf1);
+}
+.user-form .animation .box::after {
+  content: "";
+  position: absolute;
+  top: -4px;
+  left: -4px;
+  right: -4px;
+  bottom: -4px;
+  transform: skewX(2deg) skewY(4deg);
+  background: linear-gradient(312deg, #35bce9, #171742, #f10bf1);
+  filter: blur(5px);
+}
+.user-form .animation .box .cover {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background: #171742;
+  border-radius: 10px 0 10px 0;
+  z-index: 1;
+  filter: blur(0.5px);
+}
+.user-form .animation .box .cover::before {
+  content: "CodingHerald";
+  width: 180px;
+  height: 50px;
+  border-radius: 5px;
+  position: fixed;
+  top: 100px;
+  display: flex;
+  justify-content: center;
+  color: white;
+  font: 700 21px "Poppins", sans-serif;
+  align-items: center;
+  left: 10px;
+  background-color: #37a3d1;
+  filter: blur(0.3px);
+  z-index: 1;
+}
+.user-form .animation .box .cover::after {
+  content: "GreatMinds";
+  width: 150px;
+  padding: auto 10px;
+  height: 50px;
+  position: fixed;
+  display: flex;
+  color: white;
+  text-transform: capitalize;
+  font: 700 21px "Poppins", sans-serif;
+  justify-content: center;
+  align-items: center;
+  bottom: 50px;
+  border-radius: 5px;
+  right: 10px;
+  background: #c403c4;
+  filter: blur(0.3px);
+}
+.user-form .error-div {
+  width: 350px;
+  height: fit-content;
+  border-radius: 5px;
+  display: flex;
+  padding: 20px;
+  position: relative;
+  left: -40px;
+  justify-content: space-evenly;
+  align-items: center;
+  text-align: center;
+  flex-direction: column;
+  background: crimson;
+  color: white;
+  font: 700 24px cursive, sans-serif;
+}
+.user-form .error-div .icon {
+  font-size: 120px;
+}
+
+#menu {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background: white;
+}
+
+/*# sourceMappingURL=style2.css.map */
